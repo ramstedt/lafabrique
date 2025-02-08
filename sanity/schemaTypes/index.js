@@ -1,3 +1,4 @@
+import { landingPage } from './landingPage';
 export const schema = {
-  types: [],
-}
+  types: [landingPage],
+};
