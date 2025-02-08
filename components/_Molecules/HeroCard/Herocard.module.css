@@ -14,7 +14,6 @@
 
 .contentWrapper {
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
   top: 0px;
   display: flex;
   height: 100%;
@@ -54,6 +53,20 @@
 }
 
 .title {
-  color: white;
   font-size: 3rem;
+}
+
+.text {
+  letter-spacing: 0.25rem;
+  font-weight: 400;
+}
+
+.title,
+.text {
+  color: #f4eddb;
+  text-shadow:
+    -1px -1px 0 #50412668,
+    1px -1px 0 #50412668,
+    -1px 1px 0 #50412668,
+    1px 1px 0 #50412668;
 }
