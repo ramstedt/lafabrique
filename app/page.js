@@ -4,6 +4,7 @@ import Hero from '@/components/Hero/Hero';
 import { fetchData } from '@/utils/fetchLandingPage';
 import Image from 'next/image';
 import { Dawning_of_a_New_Day } from 'next/font/google';
+import Footer from '@/components/Footer/Footer';
 
 const dawning = Dawning_of_a_New_Day({
   subsets: ['latin'],
@@ -109,6 +110,7 @@ export default async function Home() {
         hej
         <br />
       </main>
+      <Footer />
     </>
   );
 }

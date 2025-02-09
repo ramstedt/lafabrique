@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
   background-color: rgba(241, 236, 227, 0.5);
   background-image: url('/assets/001-wrinkled-wall.png');
-  background-size: cover;
+  background-size: repeat;
   background-repeat: repeat;
   background-blend-mode: multiply;
   letter-spacing: 0.1rem;
