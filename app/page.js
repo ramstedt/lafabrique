@@ -3,6 +3,12 @@ import styles from './page.module.css';
 import Hero from '@/components/Hero/Hero';
 import { fetchData } from '@/utils/fetchLandingPage';
 import Image from 'next/image';
+import { Dawning_of_a_New_Day } from 'next/font/google';
+
+const dawning = Dawning_of_a_New_Day({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export default async function Home() {
   const { data } = await fetchData();
@@ -12,11 +18,46 @@ export default async function Home() {
       <Navbar />
       <Hero gallery={data.gallery} />
       <main className={styles.main}>
-        hej
+        <p className={styles.intro}>
+          En ateljé i hjärtat av{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            Majorna
+          </span>
+          . Här möts konstnärer och{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            kreativa själar
+          </span>{' '}
+          för att utforska{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            måleri och keramik
+          </span>{' '}
+          i en{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            inspirerande miljö
+          </span>
+          . Vår ateljé är en plats där du kan skapa fritt,{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            hyra arbetsyta
+          </span>{' '}
+          eller delta i{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            kurser och workshops
+          </span>
+          , oavsett om du är nybörjare eller erfaren. Med en varm och
+          gemenskaplig atmosfär erbjuder vi en{' '}
+          <span className={`${dawning.className} ${styles.dawning}`}>
+            kreativ fristad
+          </span>{' '}
+          där idéer får liv och händerna får arbeta. <br />
+          <br />{' '}
+          <span className={`${styles.welcome}`}>
+            Välkommen att bli en del av vårt konstnärliga kollektiv!
+          </span>
+        </p>
         <br />
         <div className={styles.imageWrapper}>
           <Image
-            src='/assets/camomile11.svg'
+            src='/assets/camomile11-min.svg'
             width={500}
             height={500}
             alt='Camomile flower sketch'

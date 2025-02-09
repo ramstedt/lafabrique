@@ -95,7 +95,7 @@ export default function Navbar() {
               </svg>
             </li>
             <li className={styles.menuItem}>
-              <Link href='#'>ett</Link>
+              <Link href='#'>Hyra</Link>
               <svg
                 viewBox='0 0 500 150'
                 preserveAspectRatio='none'

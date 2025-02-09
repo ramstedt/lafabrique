@@ -39,3 +39,20 @@
 .spaceAround {
   margin: 20px;
 }
+
+.intro {
+  max-width: 700px;
+  margin: 2rem auto 2rem auto;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.dawning {
+  font-size: 2rem;
+}
+
+.welcome {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
