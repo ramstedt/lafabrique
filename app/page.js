@@ -20,7 +20,8 @@ export default async function Home() {
       <Hero gallery={data.gallery} />
       <main className={styles.main}>
         <p className={styles.intro}>
-          En ateljé i hjärtat av{' '}
+          Välkommen att bli en del av vårt konstnärliga kollektiv, <br />
+          en ateljé i hjärtat av{' '}
           <span className={`${dawning.className} ${styles.dawning}`}>
             Majorna
           </span>
@@ -50,10 +51,6 @@ export default async function Home() {
             kreativ fristad
           </span>{' '}
           där idéer får liv och händerna får arbeta. <br />
-          <br />{' '}
-          <span className={`${styles.welcome}`}>
-            Välkommen att bli en del av vårt konstnärliga kollektiv!
-          </span>
         </p>
         <br />
         <div className={styles.imageWrapper}>
@@ -67,48 +64,21 @@ export default async function Home() {
           />
         </div>
         <div className={styles.container}>
-          <div className={styles.border}>
+          <div className={styles.border1}>
             <div className={styles.spaceAround}>
               <p>I am an element with a hand-drawn border!</p>
               <p>No animation applied.</p>
             </div>
           </div>
         </div>
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quo
-          natus at ad rem fuga. Dolor, tempora labore! Aut dolores temporibus
-          natus harum pariatur beatae optio rerum dolorem hic unde quasi
-          consequatur at quisquam, cumque, culpa vitae est possimus itaque qui
-          consequuntur dolorum explicabo! Repudiandae est provident voluptas qui
-          iste.
-        </p>
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
-        hej
-        <br />
+        <div className={styles.container}>
+          <div className={styles.border2}>
+            <div className={styles.spaceAround}>
+              <p>I am an element with a hand-drawn border!</p>
+              <p>No animation applied.</p>
+            </div>
+          </div>
+        </div>
       </main>
       <Footer />
     </>

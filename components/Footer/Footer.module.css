@@ -1,11 +1,14 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 0.5fr) 1fr;
+  grid-template-rows: repeat(2, 60px) 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   min-height: 300px;
   color: #fbf8ef;
+  bottom: 0;
+  flex: 1;
+  margin-bottom: 0px;
 }
 
 .flex-container > * {

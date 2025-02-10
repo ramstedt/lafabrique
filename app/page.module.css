@@ -18,7 +18,7 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 200px;
   padding: 0 40px;
   display: flex;
   align-items: center;
@@ -26,10 +26,20 @@
   text-align: center;
 }
 
-.border {
-  border: 1px #000;
+.border1 {
+  border: 1px #302819;
   border-style: dotted solid solid dotted;
   border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.border2 {
+  border: 1px #302819;
+  border-style: solid dotted solid dotted;
+  border-radius: 20px 600px 15px 150px / 500px 15px 255px 14px;
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -42,17 +52,11 @@
 
 .intro {
   max-width: 700px;
-  margin: 2rem auto 2rem auto;
+  margin: 2rem auto 1rem auto;
   line-height: 2rem;
   text-align: center;
 }
 
 .dawning {
   font-size: 2rem;
-}
-
-.welcome {
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
 }

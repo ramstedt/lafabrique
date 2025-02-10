@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 
 export default function Footer({}) {
   return (
-    <div className={styles.wrapper}>
+    <footer className={styles.wrapper}>
       <div className={styles.div10}></div>
       <div className={styles.div2}></div>
       <div className={styles.circle}>
@@ -35,6 +35,6 @@ export default function Footer({}) {
       <div className={styles.div6}></div>
       <div className={styles.div7}></div>
       <div className={styles.div8}>hej</div>
-    </div>
+    </footer>
   );
 }
