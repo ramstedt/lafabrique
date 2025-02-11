@@ -5,6 +5,12 @@ import { fetchData } from '@/utils/fetchLandingPage';
 import Image from 'next/image';
 import { Dawning_of_a_New_Day } from 'next/font/google';
 import Footer from '@/components/Footer/Footer';
+import imageUrlBuilder from '@sanity/image-url';
+import { client } from '@/sanity/sanity';
+import InfoCard from '@/components/InfoCard/InfoCard';
+
+const builder = imageUrlBuilder(client);
+const urlFor = (source) => builder.image(source).url();
 
 const dawning = Dawning_of_a_New_Day({
   subsets: ['latin'],
@@ -52,7 +58,6 @@ export default async function Home() {
           </span>{' '}
           där idéer får liv och händerna får arbeta. <br />
         </p>
-        <br />
         <div className={styles.imageWrapper}>
           <Image
             src='/assets/camomile11-min.svg'
@@ -63,21 +68,19 @@ export default async function Home() {
             priority
           />
         </div>
-        <div className={styles.container}>
-          <div className={styles.border1}>
-            <div className={styles.spaceAround}>
-              <p>I am an element with a hand-drawn border!</p>
-              <p>No animation applied.</p>
-            </div>
-          </div>
-        </div>
-        <div className={styles.container}>
-          <div className={styles.border2}>
-            <div className={styles.spaceAround}>
-              <p>I am an element with a hand-drawn border!</p>
-              <p>No animation applied.</p>
-            </div>
-          </div>
+        <div className={styles.infoCardsWrapper}>
+          {data.infoCards.map((infoCard, key) => {
+            return (
+              <div key={key}>
+                <InfoCard
+                  title={infoCard.title}
+                  content={infoCard.description}
+                  image={infoCard.image ? urlFor(infoCard.image.asset) : ''}
+                  alt={infoCard.alt || 'Image'}
+                />
+              </div>
+            );
+          })}
         </div>
       </main>
       <Footer />
