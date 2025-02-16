@@ -27,7 +27,6 @@ export default function Hero({ gallery }) {
       }}
       navigation={false}
       modules={[Pagination, Mousewheel, A11y, Autoplay, Navigation]}
-      className='mySwiper'
       direction={'horizontal'}
       centeredSlides={true}
       freeMode={true}
@@ -39,7 +38,6 @@ export default function Hero({ gallery }) {
       {gallery &&
         gallery.map((slide, key) => (
           <SwiperSlide key={key}>
-            {console.log(slide.smallText)}
             <HeroCard
               buttonText={slide.buttonText}
               textOne={slide.smallText}

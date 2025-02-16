@@ -9,6 +9,7 @@
   transition: 0.3s;
   padding: 16px 25px;
   border-radius: 5%;
+  cursor: pointer;
 }
 
 .wrapper:hover {

@@ -2,6 +2,12 @@
 import Image from 'next/image';
 import styles from './Herocard.module.css';
 import SecondaryButton from '@/components/_Atoms/SecondaryButton/SecondaryButton';
+import { Autour_One } from 'next/font/google';
+
+const autorOne = Autour_One({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export default function HeroCard({
   buttonText,
@@ -28,8 +34,12 @@ export default function HeroCard({
       )}
       <div className={styles.contentWrapper}>
         <div className={styles.content}>
-          <div className={styles.text}>{textOne}</div>
-          <div className={styles.title}>{textTwo}</div>
+          <div className={`${styles.text} ${autorOne.className}`}>
+            {textOne}
+          </div>
+          <div className={`${styles.title} ${autorOne.className}`}>
+            {textTwo}
+          </div>
           <div>
             <SecondaryButton buttonText={buttonText} url={url} />
           </div>
