@@ -30,6 +30,11 @@ export const footer = {
       type: 'string',
     },
     {
+      name: 'openingHours',
+      title: 'Öppettider',
+      type: 'string',
+    },
+    {
       name: 'instagram',
       title: 'Instagram länk',
       type: 'string',

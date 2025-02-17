@@ -23,7 +23,7 @@ export default async function Home() {
   return (
     <>
       <Navbar />
-      <Hero gallery={data.gallery} />
+      <Hero gallery={data.landingPage.gallery} />
       <main className={styles.main}>
         <p className={styles.intro}>
           Välkommen att bli en del av vårt konstnärliga kollektiv, <br />
@@ -60,16 +60,16 @@ export default async function Home() {
         </p>
         <div className={styles.imageWrapper}>
           <Image
-            src='/assets/camomile11-min.svg'
+            src="/assets/camomile11-min.svg"
             width={500}
             height={500}
-            alt='Camomile flower sketch'
+            alt="Camomile flower sketch"
             className={styles.bg}
             priority
           />
         </div>
         <div className={styles.infoCardsWrapper}>
-          {data.infoCards.map((infoCard, key) => {
+          {data.landingPage.infoCards.map((infoCard, key) => {
             return (
               <div key={key}>
                 <InfoCard
@@ -83,7 +83,7 @@ export default async function Home() {
           })}
         </div>
       </main>
-      <Footer />
+      <Footer data={data.footer} />
     </>
   );
 }

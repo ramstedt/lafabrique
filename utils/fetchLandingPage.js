@@ -2,8 +2,12 @@ import { client } from '@/sanity/sanity';
 
 export const fetchData = async () => {
   try {
-    const landingPageQuery = `*[_type == "landingPage"] | order(_createdAt asc)[0]`;
-    const data = await client.fetch(landingPageQuery);
+    const query = `{
+      "landingPage": *[_type == "landingPage"] | order(_createdAt asc)[0],
+      "footer": *[_type == "footer"] | order(_createdAt asc)[0]
+    }`;
+
+    const data = await client.fetch(query);
 
     return { data };
   } catch (error) {
