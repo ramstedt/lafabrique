@@ -11,7 +11,7 @@ export const landingPage = {
     },
     {
       name: 'gallery',
-      title: 'Gallery',
+      title: 'Hero karusell',
       type: 'array',
       options: {
         layout: 'grid',
@@ -24,7 +24,7 @@ export const landingPage = {
             {
               name: 'image',
               type: 'image',
-              title: 'Image',
+              title: 'Bild',
               description:
                 'Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
               options: {
