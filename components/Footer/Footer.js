@@ -113,11 +113,7 @@ export default function Footer({ data }) {
           ></iframe>
         </div>
       </div>
-      <div className={styles.div8}>
-        Karl Johansgatan 152
-        <br />
-        414 50 Göteborg
-      </div>
+      <div className={styles.div8}></div>
     </footer>
   );
 }

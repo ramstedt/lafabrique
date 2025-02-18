@@ -1,0 +1,17 @@
+.wrapper {
+  width: 100%;
+  padding: 3rem 1rem;
+  box-sizing: border-box;
+  margin-bottom: 3rem;
+}
+
+.wrapper p {
+  max-width: 1020px;
+  margin: auto;
+}
+
+/*
+rgba(163, 177, 138, 0.5)
+rgba(184, 80, 66, 0.5)
+rgba(225, 169, 85, 0.5)
+*/

@@ -8,6 +8,7 @@ import Footer from '@/components/Footer/Footer';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import InfoCard from '@/components/InfoCard/InfoCard';
+import ContentBlock from '@/components/ContentBlock/ContentBlock';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
@@ -82,6 +83,9 @@ export default async function Home() {
             );
           })}
         </div>
+        {data.landingPage.textBlocks.map((data, key) => {
+          return <ContentBlock key={key} data={data} />;
+        })}
       </main>
       <Footer data={data.footer} />
     </>
