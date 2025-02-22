@@ -19,8 +19,8 @@ const specialElite = Special_Elite({
 export default function Footer({ data }) {
   return (
     <footer className={`${styles.wrapper} ${specialElite.className}`}>
-      <div className={styles.div10}></div>
-      <div className={styles.div2}></div>
+      <div className={styles.footerbg}></div>
+      <div className={styles.emptyleft}></div>
       <div className={styles.circle}>
         <svg viewBox="0 0 200 200" className={styles.svgText}>
           <defs>
@@ -39,9 +39,9 @@ export default function Footer({ data }) {
           </text>
         </svg>
       </div>
-      <div className={styles.div4}></div>
-      <div className={styles.div3}></div>
-      <div className={styles.div6}>
+      <div className={styles.emptyright}></div>
+      <div className={styles.lowerCircle}></div>
+      <div className={styles.contactDetails}>
         <h3>Kontakt</h3>
         <div className={styles.contactWrapper}>
           {data.address1 && (
@@ -104,7 +104,7 @@ export default function Footer({ data }) {
           </div>
         </div>
       </div>
-      <div className={styles.div7}>
+      <div className={styles.map}>
         <div>
           <iframe
             width="300"
@@ -113,7 +113,7 @@ export default function Footer({ data }) {
           ></iframe>
         </div>
       </div>
-      <div className={styles.div8}></div>
+      <div className={styles.infoRight}></div>
     </footer>
   );
 }
