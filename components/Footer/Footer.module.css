@@ -1,9 +1,18 @@
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 0.5fr) repeat(3, 1fr);
+  grid-template-rows: repeat(5, 0.5fr, 0.5fr, 0.5fr, 0.5fr, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  color: #fbf8ef;
+}
+
+.wrapper a {
+  color: #a3b18a;
+}
+.wrapper a:hover {
+  text-decoration: underline;
+  color: #fbf8ef;
 }
 
 .footerbg {
@@ -47,8 +56,97 @@
 .contactDetails {
   grid-area: 3 / 1 / 4 / 2;
   line-height: 2rem;
-  z-index: 2;
+  margin: 0 5%;
 }
+
+.flex-container > * {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-columns: 0.01fr 1fr;
+  grid-template-rows: repeat(5, 0.5fr, 0.5fr, 0.5fr, 0.5fr, 1fr);
+  grid-column-gap: 1rem;
+  grid-row-gap: 0px;
+  align-items: center;
+}
+
+.addressIcon {
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  padding-bottom: 0.2rem;
+}
+.addressOne {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.addressTwo {
+  grid-area: 2 / 2 / 3 / 3;
+}
+.phoneIcon {
+  grid-area: 3 / 1 / 4 / 2;
+  display: flex;
+  padding-bottom: 0.2rem;
+}
+.phone {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.emailIcon {
+  grid-area: 4 / 1 / 5 / 2;
+  display: flex;
+  padding-bottom: 0.2rem;
+}
+.email {
+  grid-area: 4 / 2 / 5 / 3;
+}
+.openingHoursIcon {
+  grid-area: 5 / 1 / 6 / 2;
+  display: flex;
+  align-items: center;
+}
+.openingHours {
+  grid-area: 5 / 2 / 6 / 3;
+}
+.socials {
+  grid-area: 5 / 1 / 6 / 3;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+}
+.socialsHeader {
+  width: 100%;
+}
+
+.socials a {
+  font-size: 1.5rem;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+  color: #fbf8ef;
+}
+.map {
+  grid-area: 5 / 1 / 6 / 2;
+}
+
+.map iframe {
+  border: none;
+  width: 100%;
+  height: 300px;
+}
+.infoRight {
+  grid-area: 4 / 1 / 5 / 2;
+  margin: 5% 5%;
+}
+
+.lowerCircle {
+  height: fit-content;
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
@@ -57,25 +155,10 @@
     grid-row-gap: 0px;
     justify-items: center;
     min-height: 300px;
-    color: #fbf8ef;
     bottom: 0;
     margin-bottom: 0px;
     height: 500px;
     font-family: specialElite;
-  }
-
-  .wrapper a {
-    color: #a3b18a;
-  }
-  .wrapper a:hover {
-    text-decoration: underline;
-    color: #fbf8ef;
-  }
-
-  .flex-container > * {
-    flex: 1;
-    text-align: center;
-    padding: 20px;
   }
 
   .circle {
@@ -87,7 +170,7 @@
   }
   .lowerCircle {
     grid-area: 2 / 2 / 3 / 3;
-    height: fit-content;
+    display: block;
   }
   .emptyright {
     grid-area: 2 / 3 / 3 / 4;
@@ -100,76 +183,14 @@
   .map {
     grid-area: 3 / 2 / 4 / 3;
     z-index: 2;
+    width: 100%;
   }
   .infoRight {
     grid-area: 3 / 3 / 4 / 4;
+    margin: 0;
   }
 
   .footerbg {
     grid-area: 2 / 1 / 4 / 4;
-  }
-
-  .contactWrapper {
-    display: grid;
-    grid-template-columns: 0.01fr 1fr;
-    grid-template-rows: repeat(5, 0.5fr, 0.5fr, 0.5fr, 0.5fr, 1fr);
-    grid-column-gap: 1rem;
-    grid-row-gap: 0px;
-    align-items: center;
-  }
-
-  .addressIcon {
-    grid-area: 1 / 1 / 2 / 2;
-    display: flex;
-    padding-bottom: 0.2rem;
-  }
-  .addressOne {
-    grid-area: 1 / 2 / 2 / 3;
-  }
-  .addressTwo {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-  .phoneIcon {
-    grid-area: 3 / 1 / 4 / 2;
-    display: flex;
-    padding-bottom: 0.2rem;
-  }
-  .phone {
-    grid-area: 3 / 2 / 4 / 3;
-  }
-  .emailIcon {
-    grid-area: 4 / 1 / 5 / 2;
-    display: flex;
-    padding-bottom: 0.2rem;
-  }
-  .email {
-    grid-area: 4 / 2 / 5 / 3;
-  }
-  .openingHoursIcon {
-    grid-area: 5 / 1 / 6 / 2;
-    display: flex;
-    align-items: center;
-  }
-  .openingHours {
-    grid-area: 5 / 2 / 6 / 3;
-  }
-  .socials {
-    grid-area: 5 / 1 / 6 / 3;
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .socialsHeader {
-    width: 100%;
-  }
-
-  .socials a {
-    font-size: 1.5rem;
-  }
-
-  .socials a:hover {
-    text-decoration: underline;
-    color: #fbf8ef;
   }
 }
