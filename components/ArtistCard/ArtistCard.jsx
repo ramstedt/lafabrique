@@ -10,6 +10,25 @@ import { PortableText } from '@portabletext/react';
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
 
+export const panorama = (source, crop) => {
+  if (!source) return null;
+
+  let img = builder.image(source).auto('format').fit('crop');
+
+  if (crop) {
+    const imageWidth = 1290;
+    const imageHeight = 1632;
+
+    const left = Math.round(crop.left * imageWidth);
+    const top = Math.round(crop.top * imageHeight);
+    const width = Math.round((1 - crop.left - crop.right) * imageWidth);
+    const height = Math.round((1 - crop.top - crop.bottom) * imageHeight);
+
+    img = img.rect(left, top, width, height);
+  }
+
+  return img.url();
+};
 const dawning = Dawning_of_a_New_Day({
   subsets: ['latin'],
   weight: '400',
@@ -35,26 +54,28 @@ export default function ArtistCard({ artist, direction }) {
   return (
     <>
       <div
-        className={`${styles[direction]} ${styles.wrapper}`}
+        className={`${styles.wrapper}`}
         style={{ backgroundColor: artist.textBlock.backgroundColor }}
       >
-        <div className={`${styles.title1} ${styles.title}`}>
-          <div className={`${styles.name} ${dawning.className}`}>
-            {artist.name}
-            {console.log(artist.textBlock)}
-            <br />
-            <span className={styles.surname}>{artist.surname}</span>
+        <div className={styles[`title${direction}`]}>
+          <div className={`${styles.nameWrapper} ${dawning.className}`}>
+            <h2 className={styles.name}>
+              {artist.name}
+              <br />
+              <span className={styles.surname}>{artist.surname}</span>
+            </h2>
+            {artist.portrait?.asset && (
+              <Image
+                src={panorama(artist.portrait.asset, artist.portrait.crop)}
+                alt={artist.portrait.alt || 'Artist portrait'}
+                fill
+                priority
+              />
+            )}
           </div>
-          <Image
-            src={artist.portrait ? urlFor(artist.portrait.asset) : ''}
-            alt={artist.portrait.alt}
-            fill
-          />
         </div>
-        <div className={`${styles.text1} ${styles.text}`}>
-          <h2>
-            {artist.name} {artist.surname}
-          </h2>
+
+        <div className={styles[`text${direction}`]}>
           <div className={styles.socials}>
             {artist.facebook ? (
               <div className={styles.facebook}>
@@ -143,7 +164,7 @@ export default function ArtistCard({ artist, direction }) {
             />
           </div>
         </div>
-        <div className={styles.imagesWrapper1}>
+        {/* <div className={styles[direction]}>
           <div className={`${styles.firstImage1} ${styles.imageWrapper}`}>
             <Image
               src={
@@ -161,49 +182,6 @@ export default function ArtistCard({ artist, direction }) {
               alt={artist.galleryImage2}
               fill
             />
-          </div>
-        </div>
-        {/* </div>
-      <div className={`${styles.wrapper2} ${styles.wrapper}`}>
-        <div className={`${styles.title2} ${styles.title}`}>
-          <div className={`${styles.name} ${dawning.className}`}>
-            Cecilia <br />
-            <span className={styles.surname}>Bergman</span>
-          </div>
-          <Image src='/images/ceciliaplaceholder.jpg' alt='' fill />
-        </div>
-        <div className={`${styles.text2} ${styles.text}`}>
-          <div className={styles.socials}>
-            Kontaktinfo / social medier här
-            <ul>
-              <li>Kermaiker</li>
-              <li>Tatuerare</li>
-              <li>Entrepenör</li>
-            </ul>
-          </div>
-          <div>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur alias impedit voluptate asperiores culpa quo,
-              reprehenderit nemo accusantium tempore iusto dolore expedita
-              minima placeat, officiis est sequi accusamus debitis earum?
-              Perferendis labore nostrum porro saepe mollitia natus unde a,
-              doloremque nesciunt iusto repellat dicta consequuntur sequi sit
-              veniam quasi distinctio. Ut officia accusantium in, perspiciatis
-              repellendus saepe quo reiciendis veritatis! Laborum maxime cum
-              odit. Quisquam modi ea, excepturi accusantium vitae soluta in iste
-              itaque quae repudiandae, debitis inventore qui dolores. Reiciendis
-              nihil tenetur neque architecto laudantium beatae commodi eos enim,
-              ab harum veniam aut soluta accusamus ipsum a atque? Eveniet.
-            </p>
-          </div>
-        </div>
-        <div className={styles.imagesWrapper2}>
-          <div className={`${styles.firstImage2} ${styles.imageWrapper}`}>
-            <Image src='/images/ceramicsplaceholder.jpg' alt='' fill />
-          </div>
-          <div className={`${styles.secondImage2} ${styles.imageWrapper}`}>
-            <Image src='/images/ceramicsplaceholder2.jpg' alt='' fill />
           </div>
         </div> */}
       </div>

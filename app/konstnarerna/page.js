@@ -10,6 +10,7 @@ export default async function Konstnarerna() {
     <>
       <Navbar />
       <main>
+        {console.log(data)}
         {data.artists.map((artist, key) => {
           return (
             <ArtistCard
