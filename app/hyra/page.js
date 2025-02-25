@@ -10,6 +10,7 @@ import ContentBlock from '@/components/ContentBlock/ContentBlock';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
 
 export default async function hyra() {
+  const { data } = await fetchData();
   return (
     <>
       <Navbar />

@@ -87,7 +87,7 @@ export default function Navbar() {
           </button>
           <ul>
             <li className={styles.menuItem}>
-              <Link href="/workshop">Kurser & Workshop</Link>
+              <Link href="/kurser-workshop">Kurser & Workshop</Link>
               <svg
                 viewBox="0 0 500 150"
                 preserveAspectRatio="none"
