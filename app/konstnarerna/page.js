@@ -1,16 +1,7 @@
 import Navbar from '@/components/Navbar/Navbar';
-import Hero from '@/components/Hero/Hero';
-import { fetchData } from '@/utils/fetchLandingPage';
-import Image from 'next/image';
+import { fetchData } from '@/utils/fetchArtistsPage';
 import Footer from '@/components/Footer/Footer';
-import imageUrlBuilder from '@sanity/image-url';
-import { client } from '@/sanity/sanity';
-import InfoCard from '@/components/InfoCard/InfoCard';
-import ContentBlock from '@/components/ContentBlock/ContentBlock';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
-
-const builder = imageUrlBuilder(client);
-const urlFor = (source) => builder.image(source).url();
 
 export default async function Konstnarerna() {
   const { data } = await fetchData();
@@ -19,7 +10,15 @@ export default async function Konstnarerna() {
     <>
       <Navbar />
       <main>
-        <ArtistCard />
+        {data.artists.map((artist, key) => {
+          return (
+            <ArtistCard
+              artist={artist}
+              key={key}
+              direction={key % 2 === 0 ? 'right' : 'left'}
+            />
+          );
+        })}
       </main>
       <Footer data={data.footer} />
     </>

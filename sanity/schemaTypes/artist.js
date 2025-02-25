@@ -88,8 +88,8 @@ export const artist = {
       description: 'Lägg till en länk',
       validation: (Rule) =>
         Rule.uri({
-          scheme: ['http', 'https'], // Ensures only valid URLs with http/https
-          allowRelative: false, // Prevents relative URLs
+          scheme: ['http', 'https'],
+          allowRelative: false,
         }),
     },
     {
@@ -99,8 +99,8 @@ export const artist = {
       description: 'Lägg till en länk',
       validation: (Rule) =>
         Rule.uri({
-          scheme: ['http', 'https'], // Ensures only valid URLs with http/https
-          allowRelative: false, // Prevents relative URLs
+          scheme: ['http', 'https'],
+          allowRelative: false,
         }),
     },
     {
@@ -110,8 +110,8 @@ export const artist = {
       description: 'Lägg till en länk',
       validation: (Rule) =>
         Rule.uri({
-          scheme: ['http', 'https'], // Ensures only valid URLs with http/https
-          allowRelative: false, // Prevents relative URLs
+          scheme: ['http', 'https'],
+          allowRelative: false,
         }),
     },
     {
