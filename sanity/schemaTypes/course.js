@@ -105,6 +105,19 @@ export const course = {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'sendTo',
+      title: 'Intresseanmälan skickas till',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Karin', value: 'karin' },
+          { title: 'Cecilia', value: 'cecilia' },
+        ],
+        layout: 'dropdown',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'description',
       title: 'Beskrivning',
       type: 'array',
