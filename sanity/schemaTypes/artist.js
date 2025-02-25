@@ -24,6 +24,7 @@ export const artist = {
           name: 'text',
           title: 'Text',
           type: 'array',
+          description: 'max 400 tecken',
           of: [
             {
               type: 'block',
@@ -57,7 +58,22 @@ export const artist = {
               },
             },
           ],
-          validation: (Rule) => Rule.required(),
+          validation: (Rule) =>
+            Rule.custom((blocks) => {
+              if (!blocks || blocks.length === 0) return 'Text is required'; // Required validation
+
+              const text = blocks
+                .map((block) =>
+                  block.children
+                    ? block.children.map((child) => child.text || '').join('')
+                    : ''
+                )
+                .join('');
+
+              return text.length <= 400
+                ? true
+                : `Text is too long (${text.length}/400 characters).`;
+            }),
         },
         {
           name: 'backgroundColor',

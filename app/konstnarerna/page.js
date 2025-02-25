@@ -10,15 +10,8 @@ export default async function Konstnarerna() {
     <>
       <Navbar />
       <main>
-        {console.log(data)}
         {data.artists.map((artist, key) => {
-          return (
-            <ArtistCard
-              artist={artist}
-              key={key}
-              direction={key % 2 === 0 ? 'right' : 'left'}
-            />
-          );
+          return <ArtistCard artist={artist} key={key} direction={key} />;
         })}
       </main>
       <Footer data={data.footer} />

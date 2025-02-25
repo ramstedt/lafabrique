@@ -35,6 +35,7 @@ const dawning = Dawning_of_a_New_Day({
 });
 
 export default function ArtistCard({ artist, direction }) {
+  direction = direction % 2 === 0 ? 'right' : 'left';
   const components = {
     marks: {
       strong: ({ children }) => (
@@ -59,7 +60,7 @@ export default function ArtistCard({ artist, direction }) {
       >
         <div className={styles[`title${direction}`]}>
           <div className={`${styles.nameWrapper} ${dawning.className}`}>
-            <h2 className={styles.name}>
+            <h2 className={styles[`name${direction}`]}>
               {artist.name}
               <br />
               <span className={styles.surname}>{artist.surname}</span>
@@ -70,12 +71,13 @@ export default function ArtistCard({ artist, direction }) {
                 alt={artist.portrait.alt || 'Artist portrait'}
                 fill
                 priority
+                sizes='(max-width: 425px) 100vw, 33vw'
               />
             )}
           </div>
         </div>
-
         <div className={styles[`text${direction}`]}>
+          {console.log(direction)}
           <div className={styles.socials}>
             {artist.facebook ? (
               <div className={styles.facebook}>
@@ -164,26 +166,28 @@ export default function ArtistCard({ artist, direction }) {
             />
           </div>
         </div>
-        {/* <div className={styles[direction]}>
-          <div className={`${styles.firstImage1} ${styles.imageWrapper}`}>
+        <div className={styles[direction]}>
+          <div className={`${styles.firstImage} ${styles.imageWrapper}`}>
             <Image
               src={
                 artist.galleryImage1 ? urlFor(artist.galleryImage1.asset) : ''
               }
               alt={artist.galleryImage1.alt}
               fill
+              sizes='(max-width: 768px) 100vw, 33vw'
             />
           </div>
-          <div className={`${styles.secondImage1} ${styles.imageWrapper}`}>
+          <div className={`${styles.secondImage} ${styles.imageWrapper}`}>
             <Image
               src={
                 artist.galleryImage2 ? urlFor(artist.galleryImage2.asset) : ''
               }
               alt={artist.galleryImage2}
               fill
+              sizes='(max-width: 768px) 100vw, 33vw'
             />
           </div>
-        </div> */}
+        </div>
       </div>
     </>
   );
