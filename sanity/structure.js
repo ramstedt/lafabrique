@@ -1,6 +1,6 @@
 import { PiHouseLineFill } from 'react-icons/pi';
 import { RiLayoutBottom2Fill } from 'react-icons/ri';
-import { MdPalette } from 'react-icons/md'; // Import an icon for Artists
+import { MdPalette } from 'react-icons/md';
 
 export const structure = (S) =>
   S.list()
@@ -26,6 +26,11 @@ export const structure = (S) =>
                 .icon(MdPalette),
             ])
         ),
+      S.listItem()
+        .title('Kurser')
+        .child(S.documentTypeList('course').title('Kurser'))
+        .icon(MdPalette),
+
       S.listItem()
         .title('Footer')
         .child(S.document().schemaType('footer').documentId('footer'))
