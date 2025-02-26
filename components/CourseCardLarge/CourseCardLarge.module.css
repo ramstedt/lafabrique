@@ -1,0 +1,56 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  background: #fff;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  padding: 16px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.dates {
+  margin-top: 10px;
+}
+
+.monthGroup {
+  margin-top: 12px;
+}
+
+.monthTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.dates ul {
+  padding-left: 20px;
+}
+
+.dates li {
+  font-size: 1rem;
+  color: #555;
+}
