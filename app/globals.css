@@ -39,3 +39,17 @@ button {
 main {
   margin-top: 80px;
 }
+
+/* categories */
+
+.painting {
+  background-color: rgba(163, 177, 138, 0.5);
+}
+
+.ceramics {
+  background-color: rgba(225, 169, 85, 0.5);
+}
+
+.workshop {
+  background-color: rgba(184, 80, 66, 0.5);
+}

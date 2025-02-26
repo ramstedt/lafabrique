@@ -95,14 +95,8 @@ export const workshop = {
       name: 'category',
       title: 'Kategori',
       type: 'string',
-      options: {
-        list: [
-          { title: 'Keramik', value: 'ceramics' },
-          { title: 'Måleri', value: 'painting' },
-        ],
-        layout: 'dropdown',
-      },
-      validation: (Rule) => Rule.required(),
+      initialValue: 'workshop',
+      hidden: true,
     },
     {
       name: 'sendTo',

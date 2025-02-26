@@ -1,0 +1,3 @@
+.section:has(> h2:only-child) {
+  display: none;
+}

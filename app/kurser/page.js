@@ -1,10 +1,10 @@
-import CourseCardLarge from '@/components/CourseCardLarge/CourseCardLarge';
-import { fetchData } from '@/utils/fetchCourses';
+import EventCardLarge from '@/components/EventCardLarge/EventCardLarge';
+import { fetchCourses } from '@/utils/fetchCourses';
 import groupByMonth from '@/utils/groupByMonth';
 
 export default async function Courses() {
-  const { data } = await fetchData();
-  const groupedCourses = groupByMonth(data.courses);
+  const { data } = await fetchCourses();
+  const groupedCourses = groupByMonth(data);
 
   return (
     <main>
@@ -12,9 +12,9 @@ export default async function Courses() {
         <section key={month}>
           <h2>{month}</h2>
           {courses.map((course, index) => (
-            <CourseCardLarge
+            <EventCardLarge
               key={`${course._id}-${index}`}
-              course={course}
+              event={course}
               month={month}
             />
           ))}
