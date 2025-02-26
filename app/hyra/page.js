@@ -13,9 +13,7 @@ export default async function hyra() {
   const { data } = await fetchData();
   return (
     <>
-      <Navbar />
       <main>Kommer snart</main>
-      <Footer data={data.footer} />
     </>
   );
 }

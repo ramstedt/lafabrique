@@ -4,7 +4,6 @@ export const fetchData = async () => {
   try {
     const query = `{
       "landingPage": *[_type == "landingPage"] | order(_createdAt asc)[0],
-      "footer": *[_type == "footer"] | order(_createdAt asc)[0]
     }`;
 
     const data = await client.fetch(query);

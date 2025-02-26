@@ -1,6 +1,8 @@
 import { PiHouseLineFill } from 'react-icons/pi';
 import { RiLayoutBottom2Fill } from 'react-icons/ri';
 import { MdPalette } from 'react-icons/md';
+import { FaWineGlassAlt } from 'react-icons/fa';
+import { PiChairLight } from 'react-icons/pi';
 
 export const structure = (S) =>
   S.list()
@@ -29,7 +31,11 @@ export const structure = (S) =>
       S.listItem()
         .title('Kurser')
         .child(S.documentTypeList('course').title('Kurser'))
-        .icon(MdPalette),
+        .icon(PiChairLight),
+      S.listItem()
+        .title('Workshops')
+        .child(S.documentTypeList('workshop').title('Workshop'))
+        .icon(FaWineGlassAlt),
 
       S.listItem()
         .title('Footer')

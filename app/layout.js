@@ -1,5 +1,8 @@
 import { Manrope } from 'next/font/google';
 import './globals.css';
+import Footer from '@/components/Footer/Footer';
+import { fetchData } from '@/utils/fetchFooter';
+import Navbar from '@/components/Navbar/Navbar';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -10,10 +13,14 @@ export const metadata = {
   description: 'lorem',
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const { data } = await fetchData();
   return (
-    <html lang='en'>
-      <body className={manrope.className}>{children}</body>
+    <html lang="se">
+      <body className={manrope.className}>
+        <Navbar />
+        {children} <Footer data={data.footer} />
+      </body>
     </html>
   );
 }

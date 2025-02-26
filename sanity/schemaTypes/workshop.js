@@ -1,6 +1,6 @@
-export const course = {
-  name: 'course',
-  title: 'Kurs',
+export const workshop = {
+  name: 'workshop',
+  title: 'Workshop',
   type: 'document',
   fields: [
     {

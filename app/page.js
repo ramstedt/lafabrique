@@ -23,7 +23,6 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
       <Hero gallery={data.landingPage.gallery} />
       <main className={styles.main}>
         <p className={styles.intro}>
@@ -87,7 +86,6 @@ export default async function Home() {
           return <ContentBlock key={key} data={data} />;
         })}
       </main>
-      <Footer data={data.footer} />
     </>
   );
 }
