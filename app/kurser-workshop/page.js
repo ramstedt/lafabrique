@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect, Fragment } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import EventCardLarge from '@/components/EventCardLarge/EventCardLarge';
 import EventFilter from '@/components/EventFilter/EventFilter';
 import { fetchCourses } from '@/utils/fetchCourses';
@@ -10,7 +10,6 @@ import styles from './page.module.css';
 
 export default function Courses() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedMonth, setSelectedMonth] = useState('all');
   const [allEvents, setAllEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -43,30 +42,15 @@ export default function Courses() {
     return Array.from(uniqueCategories);
   }, [allEvents]);
 
-  const months = useMemo(() => {
-    const uniqueMonths = new Set(
-      allEvents.map((event) =>
-        new Date(event.eventDateTime[0]).toLocaleString('default', {
-          month: 'long',
-          year: 'numeric',
-        })
-      )
-    );
-    return Array.from(uniqueMonths);
-  }, [allEvents]);
-
-  const handleFilterChange = ({ category, month }) => {
-    setSelectedCategory(category);
-    setSelectedMonth(month);
-  };
-
   const filteredEvents = useMemo(() => {
-    return allEvents.filter((event) => {
-      const matchesCategory =
-        selectedCategory === 'all' || event.category === selectedCategory;
-
-      return matchesCategory;
-    });
+    return allEvents
+      .filter(
+        (event) =>
+          selectedCategory === 'all' || event.category === selectedCategory
+      )
+      .sort(
+        (a, b) => new Date(a.eventDateTime[0]) - new Date(b.eventDateTime[0])
+      );
   }, [selectedCategory, allEvents]);
 
   const groupedEvents = groupByMonth(filteredEvents);
@@ -79,13 +63,9 @@ export default function Courses() {
     <main>
       <EventFilter
         categories={categories}
-        months={months}
-        onFilterChange={handleFilterChange}
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
       />
-
-      {filteredEvents.length === 0 && (
-        <p>No events found for the selected filters.</p>
-      )}
 
       {Object.entries(groupedEvents).map(([month, events], monthIndex) => (
         <section key={`${month}-${monthIndex}`} className={styles.section}>

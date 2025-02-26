@@ -1,28 +1,22 @@
-'use client';
+import styles from './EventFilter.module.css';
 
-import { useState } from 'react';
-
-export default function EventFilter({ categories, onFilterChange }) {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const handleCategoryChange = (event) => {
-    const category = event.target.value;
-    setSelectedCategory(category);
-    onFilterChange(category);
-  };
-
+export default function EventFilter({
+  categories,
+  selectedCategory,
+  onSelectCategory,
+}) {
   return (
-    <div>
-      <label htmlFor='category-filter'>Filtrera på kategori: </label>
+    <div className={styles.filterContainer}>
+      <label htmlFor='category-select'>Sortera på kategori</label>
       <select
-        id='category-filter'
+        id='category-select'
         value={selectedCategory}
-        onChange={handleCategoryChange}
+        onChange={(e) => onSelectCategory(e.target.value)}
       >
-        <option value='all'>Alla</option>
+        <option value='all'>Allt</option>
         {categories.map((category) => (
           <option key={category} value={category}>
-            {category}
+            {category.charAt(0).toUpperCase() + category.slice(1)}
           </option>
         ))}
       </select>
