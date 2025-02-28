@@ -1,19 +1,21 @@
 import styles from './EventFilter.module.css';
 
-export default function EventFilter({
-  categories,
-  selectedCategory,
-  onSelectCategory,
-}) {
+const EventFilter = ({ selectedCategory, setSelectedCategory, events }) => {
+  const categories = [
+    'Alla',
+    ...new Set(events.map((event) => event.category)),
+  ];
+
   return (
-    <div className={styles.filterContainer}>
-      <label htmlFor='category-select'>Sortera på kategori</label>
+    <div className={styles.filterWrapper}>
+      <label htmlFor='categoryFilter'>
+        <strong>Filtrera efter kategori:</strong>
+      </label>
       <select
-        id='category-select'
+        id='categoryFilter'
         value={selectedCategory}
-        onChange={(e) => onSelectCategory(e.target.value)}
+        onChange={(e) => setSelectedCategory(e.target.value)}
       >
-        <option value='all'>Allt</option>
         {categories.map((category) => (
           <option key={category} value={category}>
             {category.charAt(0).toUpperCase() + category.slice(1)}
@@ -22,4 +24,6 @@ export default function EventFilter({
       </select>
     </div>
   );
-}
+};
+
+export default EventFilter;

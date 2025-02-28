@@ -29,14 +29,9 @@ export const structure = (S) =>
             ])
         ),
       S.listItem()
-        .title('Kurser')
-        .child(S.documentTypeList('course').title('Kurser'))
+        .title('Kurser & Workshops')
+        .child(S.documentTypeList('course').title('Kurser & Workshops'))
         .icon(PiChairLight),
-      S.listItem()
-        .title('Workshops')
-        .child(S.documentTypeList('workshop').title('Workshop'))
-        .icon(FaWineGlassAlt),
-
       S.listItem()
         .title('Footer')
         .child(S.document().schemaType('footer').documentId('footer'))

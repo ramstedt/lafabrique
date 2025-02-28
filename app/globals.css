@@ -53,3 +53,9 @@ main {
 .workshop {
   background-color: rgba(184, 80, 66, 0.5);
 }
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: 80px 5% 0 5%;
+  }
+}

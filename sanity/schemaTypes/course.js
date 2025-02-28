@@ -97,8 +97,11 @@ export const course = {
       type: 'string',
       options: {
         list: [
-          { title: 'Keramik', value: 'ceramics' },
-          { title: 'Måleri', value: 'painting' },
+          { title: 'Keramik', value: 'Keramik' },
+          { title: 'Akvarell', value: 'Akvarell' },
+          { title: 'Oljemåleri', value: 'Oljemåleri' },
+          { title: 'Teckning', value: 'Teckning' },
+          { title: 'Workshop', value: 'Workshop' },
         ],
         layout: 'dropdown',
       },
