@@ -60,7 +60,7 @@ export const artist = {
           ],
           validation: (Rule) =>
             Rule.custom((blocks) => {
-              if (!blocks || blocks.length === 0) return 'Text is required'; // Required validation
+              if (!blocks || blocks.length === 0) return 'Text is required';
 
               const text = blocks
                 .map((block) =>

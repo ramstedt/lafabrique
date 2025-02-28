@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import CatalogueCard from '@/components/CatalougeCard/CatalogueCard';
+import CatalogueCard from '@/components/CatalogueCard/CatalogueCard';
 import EventFilter from '@/components/EventFilter/EventFilter';
 import { fetchCourses } from '@/utils/fetchCourses';
 import styles from './page.module.css';
