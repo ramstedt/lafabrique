@@ -42,15 +42,17 @@ main {
 
 /* categories */
 
-.painting {
+.Oljemaleri,
+.Akvarell,
+.Teckning {
   background-color: rgba(163, 177, 138, 0.5);
 }
 
-.ceramics {
+.Keramik {
   background-color: rgba(225, 169, 85, 0.5);
 }
 
-.workshop {
+.Workshop {
   background-color: rgba(184, 80, 66, 0.5);
 }
 

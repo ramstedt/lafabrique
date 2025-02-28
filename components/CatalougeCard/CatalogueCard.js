@@ -11,10 +11,21 @@ const CatalogueCard = ({ event }) => {
   const formatDate = (date) => {
     return `${date.toLocaleDateString('sv-SE', { day: 'numeric', month: 'long' })} kl ${date.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' })}`;
   };
+
+  const normalize = (category) =>
+    category
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[ÅÄ]/g, 'A')
+      .replace(/[Ö]/g, 'O')
+      .replace(/[åä]/g, 'a')
+      .replace(/[ö]/g, 'o')
+      .replace(/[^A-Za-z ]/g, '');
+
   return (
     <Link
       href={`/${event.slug.current}`}
-      className={`${styles.card} ${event.category}`}
+      className={`${styles.card} ${normalize(event.category)}`}
     >
       <div className={styles.imageContainer}>
         <Image
