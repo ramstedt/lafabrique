@@ -1,10 +1,8 @@
-import Navbar from '@/components/Navbar/Navbar';
 import styles from './page.module.css';
 import Hero from '@/components/Hero/Hero';
 import { fetchData } from '@/utils/fetchLandingPage';
 import Image from 'next/image';
 import { Dawning_of_a_New_Day } from 'next/font/google';
-import Footer from '@/components/Footer/Footer';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import InfoCard from '@/components/InfoCard/InfoCard';
@@ -60,10 +58,10 @@ export default async function Home() {
         </p>
         <div className={styles.imageWrapper}>
           <Image
-            src="/assets/camomile11-min.svg"
+            src='/assets/camomile11-min.svg'
             width={500}
             height={500}
-            alt="Camomile flower sketch"
+            alt='Camomile flower sketch'
             className={styles.bg}
             priority
           />

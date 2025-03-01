@@ -45,15 +45,15 @@ main {
 .Oljemaleri,
 .Akvarell,
 .Teckning {
-  background-color: rgba(163, 177, 138, 0.5);
+  background-color: rgba(163, 177, 138, 0.5) !important;
 }
 
 .Keramik {
-  background-color: rgba(225, 169, 85, 0.5);
+  background-color: rgba(225, 169, 85, 0.5) !important;
 }
 
 .Workshop {
-  background-color: rgba(184, 80, 66, 0.5);
+  background-color: rgba(184, 80, 66, 0.5) !important;
 }
 
 @media screen and (min-width: 768px) {

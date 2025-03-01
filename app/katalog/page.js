@@ -5,9 +5,10 @@ import CatalogueCard from '@/components/CatalogueCard/CatalogueCard';
 import EventFilter from '@/components/EventFilter/EventFilter';
 import { fetchCourses } from '@/utils/fetchCourses';
 import styles from './page.module.css';
+import { groupByMonth } from '@/utils/groupByMonth';
 
 export default function Catalogue() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('alla');
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -30,36 +31,34 @@ export default function Catalogue() {
 
   const now = new Date();
 
-  const transformedData = events
-    .flatMap((event) =>
-      event.eventDateTime.map((date) => ({
-        ...event,
-        eventDateTime: new Date(date),
-      }))
-    )
-    .filter((event) => event.eventDateTime > now)
-    .sort((a, b) => a.eventDateTime - b.eventDateTime);
-
-  // Filter by category
+  // Find the earliest future date
   const filteredEvents = useMemo(() => {
-    if (selectedCategory === 'all') return transformedData;
-    return transformedData.filter(
+    return events
+      .map((event) => {
+        const futureDates = event.eventDateTime
+          .map((date) => new Date(date))
+          .filter((date) => date > now)
+          .sort((a, b) => a - b);
+
+        if (futureDates.length === 0) return null;
+
+        return { ...event, eventDateTime: futureDates[0] }; // Keep the event with its earliest future date
+      })
+      .filter(Boolean) // Remove events that only have dates in the past
+      .sort((a, b) => a.eventDateTime - b.eventDateTime);
+  }, [events]);
+
+  const categorizedEvents = useMemo(() => {
+    if (selectedCategory === 'alla') return filteredEvents;
+    return filteredEvents.filter(
       (event) => event.category === selectedCategory
     );
-  }, [selectedCategory, transformedData]);
+  }, [selectedCategory, filteredEvents]);
 
-  // Group by month
-  const groupedByMonth = filteredEvents.reduce((acc, event) => {
-    const monthYear = event.eventDateTime.toLocaleString('sv-SE', {
-      month: 'long',
-      year: 'numeric',
-    });
-    if (!acc[monthYear]) {
-      acc[monthYear] = [];
-    }
-    acc[monthYear].push(event);
-    return acc;
-  }, {});
+  const groupedByMonth = useMemo(
+    () => groupByMonth(categorizedEvents),
+    [categorizedEvents]
+  );
 
   return (
     <main>
@@ -83,6 +82,7 @@ export default function Catalogue() {
                 />
               ))}
             </div>
+            {console.log(events)}
           </div>
         ))
       ) : (
