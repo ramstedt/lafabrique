@@ -6,10 +6,10 @@ export default async function handler(req, res) {
       req.body;
 
     let recipientEmail;
-    if (sendTo === 'cecilia') {
-      recipientEmail = 'cilla@cilla.com';
-    } else if (sendTo === 'karin') {
-      recipientEmail = 'karin@karin.com';
+    if (sendTo === 'karin') {
+      recipientEmail = process.env.KARIN_EMAIL;
+    } else if (sendTo === 'cecilia') {
+      recipientEmail = process.env.CECILIA_EMAIL;
     } else {
       return res.status(400).json({ error: 'Invalid recipient' });
     }
@@ -26,7 +26,7 @@ export default async function handler(req, res) {
       await transporter.sendMail({
         from: email,
         to: recipientEmail,
-        subject: `Bokning av kursplats: ${course}`,
+        subject: `Bokningsförfrågan: ${course}`,
         text: `
           Förnamn: ${firstName}
           Efternamn: ${surname}

@@ -69,7 +69,7 @@ export default function Catalogue() {
       />
 
       {loading ? (
-        <p>Loading...</p> // Ensure this message appears while fetching
+        <p>Loading...</p>
       ) : Object.keys(groupedByMonth).length > 0 ? (
         Object.keys(groupedByMonth).map((month) => (
           <div key={month}>

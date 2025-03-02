@@ -24,7 +24,7 @@ const CatalogueCard = ({ event }) => {
 
   return (
     <Link
-      href={`/${event.slug.current}`}
+      href={`katalog/${event.slug.current}`}
       className={`${styles.card} ${normalize(event.category)}`}
     >
       <div className={styles.imageContainer}>
