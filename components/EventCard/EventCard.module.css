@@ -26,6 +26,12 @@
   margin: 0;
 }
 
+.wrapper h1 {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+  max-width: 95vw;
+}
+
 .wrapper h4 {
   padding-bottom: 0.5rem;
 }
@@ -125,5 +131,8 @@
 
   .wrapper h4 {
     padding: 0;
+  }
+  .wrapper h1 {
+    font-size: 2rem;
   }
 }
