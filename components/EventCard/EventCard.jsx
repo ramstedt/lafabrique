@@ -8,7 +8,7 @@ import { fetchCourseBySlug } from '@/utils/fetchCourses';
 import Form from '@/components/Form/Form';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import BorderWrapper from '../_Atoms/BorderWrapper/BorderWrapper';
+import { formatDateOnly, formatDateWithTime } from '@/utils/formatDates';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
@@ -41,10 +41,6 @@ export default function EventCard() {
   if (isLoading) return <p className={styles.loading}>Laddar...</p>;
   if (error) return <p className={styles.error}>{error}</p>;
   if (!event) return null;
-  const formatDate = (dateTime) => {
-    const date = new Date(dateTime);
-    return `${date.getDate()}${date.getDate() === 1 ? 'a' : 'e'} ${new Intl.DateTimeFormat('sv-SE', { month: 'long' }).format(date)} kl ${date.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' })}`;
-  };
 
   return (
     <div className={`${styles.wrapper} margin`}>
@@ -73,7 +69,7 @@ export default function EventCard() {
           {event.eventDateTime.map((dateTime, key) => {
             return (
               <li key={key} className={styles.time}>
-                {formatDate(dateTime)}
+                {formatDateWithTime(dateTime)}
               </li>
             );
           })}
@@ -89,6 +85,9 @@ export default function EventCard() {
                 {event.hour > 2 ? 'timmar' : 'timme'})
               </>
             )}
+            <br />
+            {event.signUpBy &&
+              `Anmäl senast den ${formatDateOnly(event.signUpBy)}`}
           </small>
         </ul>
 

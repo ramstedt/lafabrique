@@ -3,15 +3,12 @@ import styles from './CatalogueCard.module.css';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import Link from 'next/link';
+import { formatDateWithTime, formatDateOnly } from '@/utils/formatDates';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
 
 const CatalogueCard = ({ event }) => {
-  const formatDate = (date) => {
-    return `${date.toLocaleDateString('sv-SE', { day: 'numeric', month: 'long' })} kl ${date.toLocaleTimeString('sv-SE', { hour: '2-digit', minute: '2-digit' })}`;
-  };
-
   const normalize = (category) =>
     category
       .normalize('NFD')
@@ -81,7 +78,12 @@ const CatalogueCard = ({ event }) => {
         </div>
         <h3 className={styles.title}>{event.name}</h3>
         <div className={styles.dates}>
-          <span>{formatDate(event.eventDateTime)}</span>
+          <span>{formatDateWithTime(event.eventDateTime)}</span>
+          <br />
+          <small>
+            {event.signUpBy &&
+              `Anmäl senast den ${formatDateOnly(event.signUpBy)}`}
+          </small>
         </div>
       </div>
     </Link>
