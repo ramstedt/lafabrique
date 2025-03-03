@@ -72,80 +72,81 @@ export default function Form({ event }) {
         'Kursen är för tillfället fullbokad'
       ) : (
         <form className={styles.form} onSubmit={onSubmit}>
-          <h2>Boka kursplats</h2>
+          <h2>Bokningsförfrågan</h2>
           <div className={styles.formBlock}>
             <div>
-              <label htmlFor='firstName'>Ange ditt förnamn</label>{' '}
-              <label htmlFor='surname'>och efternamn</label>
+              <label htmlFor="firstName">Ange ditt förnamn</label>{' '}
+              <label htmlFor="surname">och efternamn</label>
             </div>
             <div className={styles.nameInputs}>
               <input
-                type='text'
-                name='firstName'
+                type="text"
+                name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                id='firstName'
-                placeholder='Förnamn'
+                id="firstName"
+                placeholder="Förnamn"
                 required
               />
               <input
-                type='text'
-                name='surname'
+                type="text"
+                name="surname"
                 value={formData.surname}
                 onChange={handleChange}
-                id='surname'
-                placeholder='Efternamn'
+                id="surname"
+                placeholder="Efternamn"
                 required
               />
             </div>
           </div>
           <div className={styles.formBlock}>
-            <label htmlFor='email'>Ange din emailadress</label>
+            <label htmlFor="email">Ange din emailadress</label>
             <input
-              type='email'
-              name='email'
+              type="email"
+              name="email"
               value={formData.email}
               onChange={handleChange}
-              id='email'
-              placeholder='email@email.com'
+              id="email"
+              placeholder="email@email.com"
               required
             />
           </div>
           <div className={styles.formBlock}>
-            <label htmlFor='phone'>Ange ditt telefonnummer</label>
+            <label htmlFor="phone">Ange ditt telefonnummer</label>
             <input
-              type='tel'
-              name='phone'
+              type="tel"
+              name="phone"
               value={formData.phone}
               onChange={handleChange}
-              id='phone'
-              placeholder='0702000000'
+              id="phone"
+              placeholder="0702000000"
               required
             />
           </div>
+          <div>Ang. {event.name}</div>
           <div className={styles.formBlock}>
-            <label htmlFor='message'>Meddelande</label>
+            <label htmlFor="message">Meddelande</label>
             <textarea
-              name='message'
+              name="message"
               value={formData.message}
               onChange={handleChange}
-              id='message'
-              placeholder='Skriv ditt meddelande...'
+              id="message"
+              placeholder="Skriv ditt meddelande..."
             ></textarea>
           </div>
           <div className={styles.formBlock}>
             <p>{status}</p>
             <button
               className={styles.button}
-              type='submit'
+              type="submit"
               disabled={disableButton}
             >
               {disableButton ? (
                 <ClipLoader
-                  color='#994ff3'
+                  color="#994ff3"
                   size={14}
-                  aria-label='Loading Spinner'
-                  data-testid='loader'
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
                 />
               ) : (
                 'Skicka förfrågan'

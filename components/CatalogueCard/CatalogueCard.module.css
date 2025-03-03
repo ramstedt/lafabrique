@@ -50,6 +50,27 @@
   margin-bottom: 6px;
 }
 
+.icon {
+  position: absolute;
+  display: flex;
+  width: 290px;
+  height: 80px;
+  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.iconImage {
+  max-width: 500px;
+  height: auto;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 @media screen and (min-width: 768px) {
   .card {
     max-width: 300px;

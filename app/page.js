@@ -22,7 +22,7 @@ export default async function Home() {
   return (
     <>
       <Hero gallery={data.landingPage.gallery} />
-      <main className={styles.main}>
+      <main>
         <p className={styles.intro}>
           Välkommen att bli en del av vårt konstnärliga kollektiv, <br />
           en ateljé i hjärtat av{' '}
@@ -56,13 +56,13 @@ export default async function Home() {
           </span>{' '}
           där idéer får liv och händerna får arbeta. <br />
         </p>
-        <div className={styles.imageWrapper}>
+        <div className="bgImageWrapper">
           <Image
-            src='/assets/camomile11-min.svg'
+            src="/assets/camomile11-min.svg"
             width={500}
             height={500}
-            alt='Camomile flower sketch'
-            className={styles.bg}
+            alt="Camomile flower sketch"
+            className="bgImage"
             priority
           />
         </div>

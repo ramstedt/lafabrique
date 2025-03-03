@@ -1,7 +1,7 @@
 import { Manrope } from 'next/font/google';
 import './globals.css';
 import Footer from '@/components/Footer/Footer';
-import { fetchData } from '@/utils/fetchFooter';
+import { fetchFooter } from '@/utils/fetchFooter';
 import Navbar from '@/components/Navbar/Navbar';
 
 const manrope = Manrope({
@@ -14,9 +14,9 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const { data } = await fetchData();
+  const { data } = await fetchFooter();
   return (
-    <html lang="se">
+    <html lang="sv">
       <body className={manrope.className}>
         <Navbar />
         {children} <Footer data={data.footer} />

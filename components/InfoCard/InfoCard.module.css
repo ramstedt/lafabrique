@@ -13,42 +13,12 @@
   width: 230px;
   height: 200px;
   overflow: hidden;
+  margin: auto;
 }
-
 .imageWrapper img {
   object-fit: cover;
 }
 
 .spaceAround {
   margin: 10px;
-}
-
-.border1 {
-  border: 1px #302819;
-  border-style: dotted solid solid dotted;
-  border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.border2 {
-  border: 1px #302819;
-  border-style: solid dotted solid dotted;
-  border-radius: 20px 600px 15px 150px / 500px 15px 255px 14px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.border3 {
-  border: 1px #302819;
-  border-style: solid dotted solid dotted;
-  border-radius: 50px 500px 20px 180px / 400px 30px 255px 20px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

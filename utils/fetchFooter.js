@@ -1,6 +1,6 @@
 import { client } from '@/sanity/sanity';
 
-export const fetchData = async () => {
+export const fetchFooter = async () => {
   try {
     const query = `{
       "footer": *[_type == "footer"] | order(_createdAt asc)[0]
