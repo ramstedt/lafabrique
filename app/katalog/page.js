@@ -6,7 +6,6 @@ import EventFilter from '@/components/EventFilter/EventFilter';
 import { fetchCourses } from '@/utils/fetchCourses';
 import styles from './page.module.css';
 import { groupByMonth } from '@/utils/groupByMonth';
-import Image from 'next/image';
 
 export default function Catalogue() {
   const [selectedCategory, setSelectedCategory] = useState('alla');

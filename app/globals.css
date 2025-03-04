@@ -46,6 +46,17 @@ main {
 
 .Oljemaleri,
 .Akvarell,
+.Teckning,
+.Keramik,
+.Workshop {
+  background-image: url('/assets/001-wrinkled-wall.png');
+  background-size: repeat;
+  background-repeat: repeat;
+  background-blend-mode: multiply;
+}
+
+.Oljemaleri,
+.Akvarell,
 .Teckning {
   background-color: rgba(163, 177, 138, 0.5) !important;
 }
@@ -60,7 +71,8 @@ main {
 
 .bgImageWrapper {
   position: absolute;
-  width: 96%;
+  width: 100%;
+  top: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,6 +81,10 @@ main {
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
+}
+
+.bgImageWrapper:has(+ .swiper) {
+  top: 950px;
 }
 
 .bgImage {

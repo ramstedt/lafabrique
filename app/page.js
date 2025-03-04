@@ -56,16 +56,6 @@ export default async function Home() {
           </span>{' '}
           där idéer får liv och händerna får arbeta. <br />
         </p>
-        <div className="bgImageWrapper">
-          <Image
-            src="/assets/camomile11-min.svg"
-            width={500}
-            height={500}
-            alt="Camomile flower sketch"
-            className="bgImage"
-            priority
-          />
-        </div>
         <div className={styles.infoCardsWrapper}>
           {data.landingPage.infoCards.map((infoCard, key) => {
             return (

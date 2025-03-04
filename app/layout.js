@@ -3,6 +3,7 @@ import './globals.css';
 import Footer from '@/components/Footer/Footer';
 import { fetchFooter } from '@/utils/fetchFooter';
 import Navbar from '@/components/Navbar/Navbar';
+import Image from 'next/image';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -19,6 +20,16 @@ export default async function RootLayout({ children }) {
     <html lang="sv">
       <body className={manrope.className}>
         <Navbar />
+        <div className="bgImageWrapper">
+          <Image
+            src="/assets/camomile11-min.svg"
+            width={500}
+            height={500}
+            alt="Camomile flower sketch"
+            className="bgImage"
+            priority
+          />
+        </div>
         {children} <Footer data={data.footer} />
       </body>
     </html>
