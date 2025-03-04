@@ -1,6 +1,6 @@
 import { client } from '@/sanity/sanity';
 
-export const fetchData = async () => {
+export const fetchLandingPage = async () => {
   try {
     const query = `{
       "landingPage": *[_type == "landingPage"] | order(_createdAt asc)[0],

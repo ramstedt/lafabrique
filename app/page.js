@@ -1,7 +1,6 @@
 import styles from './page.module.css';
 import Hero from '@/components/Hero/Hero';
-import { fetchData } from '@/utils/fetchLandingPage';
-import Image from 'next/image';
+import { fetchLandingPage } from '@/utils/fetchLandingPage';
 import { Dawning_of_a_New_Day } from 'next/font/google';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
@@ -17,7 +16,7 @@ const dawning = Dawning_of_a_New_Day({
 });
 
 export default async function Home() {
-  const { data } = await fetchData();
+  const { data } = await fetchLandingPage();
 
   return (
     <>

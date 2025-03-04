@@ -1,19 +1,13 @@
 import { client } from '@/sanity/sanity';
 
-export const fetcArtists = async () => {
+export const fetchRentals = async () => {
   try {
     const query = `{
-      "artists": *[_type == "artist"] | order(_createdAt asc) {
-        ...,
-        portrait {
-          asset->{ _id, url },
-          crop,
-          hotspot
-        }
-      },
+      "rent": *[_type == "rent"] | order(_createdAt asc)[0],
     }`;
 
     const data = await client.fetch(query);
+
     return { data };
   } catch (error) {
     console.error('Error fetching data:', error);

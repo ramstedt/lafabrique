@@ -96,7 +96,7 @@ export default function EventCard() {
         </div>
 
         <div>
-          <strong>Pris:</strong> {event.price} SEK
+          <strong>Pris:</strong> {event.price} kr
         </div>
       </div>
       <div className={styles.description}>

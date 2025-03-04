@@ -8,10 +8,9 @@
   width: 95%;
   max-width: 350px;
   height: 200px;
-  border: 1px #302819;
-  border-style: dotted solid solid dotted;
-  border-radius: 20px 55px 100px 10px / 500px 10px 15px 55px;
-  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  border-image: url(/assets/border.svg) 30/19px round;
 }
 
 .imageContainer {

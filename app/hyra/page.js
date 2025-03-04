@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero/Hero';
-import { fetchData } from '@/utils/fetchLandingPage';
+import { fetchRentals } from '@/utils/fetchRentals';
 import Image from 'next/image';
 import Footer from '@/components/Footer/Footer';
 import imageUrlBuilder from '@sanity/image-url';
@@ -9,11 +9,11 @@ import InfoCard from '@/components/InfoCard/InfoCard';
 import ContentBlock from '@/components/ContentBlock/ContentBlock';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
 
-export default async function hyra() {
-  const { data } = await fetchData();
+export default async function Hyra() {
+  const { data } = await fetchRentals();
   return (
     <>
-      <main>Kommer snart</main>
+      <main>Kommer snart{console.log(data)}</main>
     </>
   );
 }

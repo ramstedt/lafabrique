@@ -43,13 +43,17 @@
   margin-top: 1rem;
   width: fit-content;
   padding: 1rem;
-  box-sizing: border-box;
-  border: 1px #302819;
+  border-width: 1px;
+  border-style: solid;
+  border-image: url(/assets/border.svg) 30/19px round;
+  width: 75%;
+  max-width: 300px;
+}
+
+/* border: 1px #302819;
   border-style: dotted solid solid dotted;
   border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
-  background-color: #fbf8ef;
-  width: 87%;
-}
+  background-color: #fbf8ef; */
 
 .imageWrapper {
   grid-area: 1 / 1 / 2 / 2;
@@ -110,10 +114,9 @@
     left: initial;
     transform: initial;
     margin-bottom: 1rem;
-    border: 1px #302819;
-    border-style: dotted solid solid dotted;
-    border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
-    overflow: hidden;
+    border-width: 1px;
+    border-style: solid;
+    border-image: url(/assets/border.svg) 30/19px round;
   }
 
   .overview {

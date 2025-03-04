@@ -67,32 +67,6 @@ export default function Catalogue() {
         setSelectedCategory={setSelectedCategory}
         events={events}
       />
-      {/* <div className="bgImageWrapper">
-        <Image
-          src="/assets/test.png"
-          width={300}
-          height={300}
-          alt="Camomile flower sketch"
-          className="bgImage"
-          priority
-        />
-        <Image
-          src="/assets/easel.png"
-          width={400}
-          height={400}
-          alt="Camomile flower sketch"
-          className="bgImage"
-          priority
-        />{' '}
-        <Image
-          src="/assets/cups-flowers.svg"
-          width={200}
-          height={200}
-          alt="Camomile flower sketch"
-          className="bgImage"
-          priority
-        />
-      </div> */}
       {loading ? (
         <p>Loading...</p>
       ) : Object.keys(groupedByMonth).length > 0 ? (

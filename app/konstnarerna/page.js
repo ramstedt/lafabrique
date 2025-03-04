@@ -1,10 +1,8 @@
-import Navbar from '@/components/Navbar/Navbar';
-import { fetchData } from '@/utils/fetchArtistsPage';
-import Footer from '@/components/Footer/Footer';
+import { fetchArtists } from '@/utils/fetchArtistsPage';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
 
 export default async function Konstnarerna() {
-  const { data } = await fetchData();
+  const { data } = await fetchArtists();
 
   return (
     <>

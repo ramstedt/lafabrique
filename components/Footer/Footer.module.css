@@ -12,6 +12,7 @@
 }
 .wrapper a:hover {
   text-decoration: underline;
+  text-underline-offset: 8px;
   color: #fbf8ef;
 }
 
@@ -133,7 +134,9 @@
 }
 
 .map iframe {
-  border: none;
+  border-width: 1px;
+  border-style: solid;
+  border-image: url(/assets/border.svg) 30/19px round;
   width: 100%;
   height: 300px;
 }
