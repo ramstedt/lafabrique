@@ -52,7 +52,6 @@ export default function EventCard() {
           className={styles.test}
         />
       </div>
-
       <div className={styles.header}>
         <h1>{event.name}</h1>
         <h4>{event.category}</h4>
@@ -64,7 +63,7 @@ export default function EventCard() {
 
         <ul>
           <strong>
-            {event.eventDateTime.length >= 2 ? 'Tillfällen' : 'Tid'}:
+            {event.eventDateTime.length >= 2 ? 'Kurstillfällen' : 'Tid'}:
           </strong>
           {event.eventDateTime.map((dateTime, key) => {
             return (
@@ -85,9 +84,6 @@ export default function EventCard() {
                 {event.hour > 2 ? 'timmar' : 'timme'})
               </>
             )}
-            <br />
-            {event.signUpBy &&
-              `Anmäl senast den ${formatDateOnly(event.signUpBy)}`}
           </small>
         </ul>
 

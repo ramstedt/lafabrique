@@ -63,11 +63,6 @@ export const course = {
       validation: (Rule) => Rule.required().min(1),
     },
     {
-      name: 'signUpBy',
-      title: 'Sista dag för anmälan',
-      type: 'date',
-    },
-    {
       name: 'hour',
       title: 'Antal timmar',
       type: 'number',
