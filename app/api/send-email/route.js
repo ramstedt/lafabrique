@@ -27,7 +27,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: email,
       to: recipientEmail,
-      subject: `Bokningsförfrågan: ${course}`,
+      subject: `Intresseanmälan: ${course}`,
       text: `
         Förnamn: ${firstName}
         Efternamn: ${surname}

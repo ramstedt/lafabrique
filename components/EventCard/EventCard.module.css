@@ -48,12 +48,9 @@
   border-image: url(/assets/border.svg) 30/19px round;
   width: 75%;
   max-width: 300px;
+  position: relative;
+  z-index: 10;
 }
-
-/* border: 1px #302819;
-  border-style: dotted solid solid dotted;
-  border-radius: 255px 15px 255px 15px / 15px 255px 15px 255px;
-  background-color: #fbf8ef; */
 
 .imageWrapper {
   grid-area: 1 / 1 / 2 / 2;
@@ -84,6 +81,24 @@
   width: 80%;
 }
 
+.button {
+  border: none;
+  background: #56482d;
+  padding: 4px 8px;
+  font-family: inherit;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #fbf8ef;
+  border: 1px #302819;
+  border-style: solid dotted solid dotted;
+  border-radius: 50px 500px 20px 180px / 400px 30px 255px 20px;
+}
+
+.button:hover {
+  color: #56482d;
+  background: #fbf8ef93;
+}
+
 @media screen and (min-width: 1024px) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
@@ -96,17 +111,6 @@
     text-shadow: none;
     color: #55462b;
   }
-  /* .header {
-    grid-area: 1 / 1 / 2 / 2;
-    position: relative;
-    z-index: 50;
-    color: #fbf8ef;
-    text-shadow:
-      -1px -1px 0 #55462b,
-      1px -1px 0 #55462b,
-      -1px 1px 0 #55462b,
-      1px 1px 0 #55462b;
-  } */
   .imageWrapper {
     grid-area: 1 / 2 / 4 / 3;
     max-height: 600px;

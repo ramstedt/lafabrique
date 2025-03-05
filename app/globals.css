@@ -103,6 +103,12 @@ li {
   line-height: 1.9rem;
 }
 
+button {
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  min-width: fit-content;
+}
+
 @media screen and (min-width: 768px) {
   main {
     margin: 80px 5% 0 5%;
