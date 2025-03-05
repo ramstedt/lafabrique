@@ -5,6 +5,7 @@ import { fetchFooter } from '@/utils/fetchFooter';
 import Navbar from '@/components/Navbar/Navbar';
 import Image from 'next/image';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
         </div>
         {children} <Footer data={data.footer} />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
