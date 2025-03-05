@@ -135,4 +135,40 @@ export const course = {
       ],
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      eventDateTime: 'eventDateTime',
+      category: 'category',
+      image: 'image', // Fetch the course image
+    },
+    prepare({ title, eventDateTime, category, image }) {
+      if (!eventDateTime || eventDateTime.length === 0) {
+        return {
+          title: `${title} (${category || 'Ingen kategori'})`,
+          subtitle: 'Ingen tid angiven',
+          media: image, // Use image as the icon
+        };
+      }
+
+      // Sort eventDateTime array to get the earliest date
+      const sortedDates = eventDateTime
+        .map((date) => new Date(date))
+        .sort((a, b) => a - b);
+
+      const earliestDate = sortedDates[0];
+
+      const formattedDate = earliestDate.toLocaleDateString('sv-SE', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+
+      return {
+        title: `${title}`,
+        subtitle: `${category}, ${eventDateTime.length === 1 ? 'Tid' : 'Startdatum'}: ${formattedDate}`,
+        media: image,
+      };
+    },
+  },
 };
