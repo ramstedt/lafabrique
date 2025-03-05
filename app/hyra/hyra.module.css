@@ -1,0 +1,13 @@
+.rentalsWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .rentalsWrapper {
+    flex-direction: row;
+  }
+}

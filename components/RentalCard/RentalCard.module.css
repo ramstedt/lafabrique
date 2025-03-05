@@ -1,0 +1,10 @@
+.wrapper {
+  border-width: 1px;
+  border-style: solid;
+  border-image: url(/assets/border.svg) 30/19px round;
+  padding: 0.5rem;
+}
+
+.wrapper h2 {
+  margin-top: 0;
+}

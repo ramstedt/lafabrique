@@ -1,6 +1,6 @@
 import { client } from '@/sanity/sanity';
 
-export const fetcArtists = async () => {
+export const fetchArtists = async () => {
   try {
     const query = `{
       "artists": *[_type == "artist"] | order(_createdAt asc) {

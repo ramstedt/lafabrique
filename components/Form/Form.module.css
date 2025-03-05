@@ -89,7 +89,8 @@
 }
 
 .form input,
-.form textarea {
+.form textarea,
+.form select {
   padding-left: 0.2rem;
   border: 1px #302819;
   border-style: dotted solid solid dotted;
@@ -97,7 +98,8 @@
   overflow: hidden;
 }
 
-.form input {
+.form input,
+.form select {
   height: 2rem;
 }
 

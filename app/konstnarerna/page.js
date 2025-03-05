@@ -1,4 +1,4 @@
-import { fetchArtists } from '@/utils/fetchArtistsPage';
+import { fetchArtists } from '@/utils/fetchArtists';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
 
 export default async function Konstnarerna() {

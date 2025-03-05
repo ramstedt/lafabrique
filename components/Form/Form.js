@@ -1,8 +1,9 @@
+'use client';
 import { useState } from 'react';
 import ClipLoader from 'react-spinners/ClipLoader';
 import styles from './Form.module.css';
 
-export default function Form({ event, space }) {
+export default function Form({ event, rentals }) {
   const [formData, setFormData] = useState({
     firstName: '',
     surname: '',
@@ -68,87 +69,98 @@ export default function Form({ event, space }) {
 
   return (
     <div className={styles.content}>
-      {event.freeSeats?.freeSeats === 0 ? (
+      {event && event.freeSeats?.freeSeats === 0 ? (
         'Kursen är för tillfället fullbokad'
       ) : (
         <form className={styles.form} onSubmit={onSubmit}>
           <h2>Intresseanmälan</h2>
           <div className={styles.formBlock}>
             <div>
-              <label htmlFor="firstName">Ange ditt förnamn</label>{' '}
-              <label htmlFor="surname">och efternamn</label>
+              <label htmlFor='firstName'>Ange ditt förnamn</label>{' '}
+              <label htmlFor='surname'>och efternamn</label>
             </div>
             <div className={styles.nameInputs}>
               <input
-                type="text"
-                name="firstName"
+                type='text'
+                name='firstName'
                 value={formData.firstName}
                 onChange={handleChange}
-                id="firstName"
-                placeholder="Förnamn"
+                id='firstName'
+                placeholder='Förnamn'
                 required
               />
               <input
-                type="text"
-                name="surname"
+                type='text'
+                name='surname'
                 value={formData.surname}
                 onChange={handleChange}
-                id="surname"
-                placeholder="Efternamn"
+                id='surname'
+                placeholder='Efternamn'
                 required
               />
             </div>
           </div>
           <div className={styles.formBlock}>
-            <label htmlFor="email">Ange din emailadress</label>
+            <label htmlFor='email'>Ange din emailadress</label>
             <input
-              type="email"
-              name="email"
+              type='email'
+              name='email'
               value={formData.email}
               onChange={handleChange}
-              id="email"
-              placeholder="email@email.com"
+              id='email'
+              placeholder='email@email.com'
               required
             />
           </div>
           <div className={styles.formBlock}>
-            <label htmlFor="phone">Ange ditt telefonnummer</label>
+            <label htmlFor='phone'>Ange ditt telefonnummer</label>
             <input
-              type="tel"
-              name="phone"
+              type='tel'
+              name='phone'
               value={formData.phone}
               onChange={handleChange}
-              id="phone"
-              placeholder="0702000000"
+              id='phone'
+              placeholder='0702000000'
               required
             />
           </div>
           {event && <div>Ang. {event.name}</div>}
-          {space && <div>Kontakt ang. hyra utrymme</div>}
+          {rentals && (
+            <div className={styles.formBlock}>
+              <label htmlFor='rental'>Jag är intresserad av</label>
+              <select name='rental' id='rental'>
+                {rentals.map((rental, key) => (
+                  <option key={key} value='volvo'>
+                    {rental.title}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
           <div className={styles.formBlock}>
-            <label htmlFor="message">Meddelande</label>
+            <label htmlFor='message'>Meddelande</label>
             <textarea
-              name="message"
+              name='message'
               value={formData.message}
               onChange={handleChange}
-              id="message"
-              placeholder="Skriv ditt meddelande..."
+              id='message'
+              placeholder='Skriv ditt meddelande...'
             ></textarea>
           </div>
           <div className={styles.formBlock}>
             <p>{status}</p>
             <button
-              id="#intresseanmalan"
+              id='#intresseanmalan'
               className={styles.button}
-              type="submit"
+              type='submit'
               disabled={disableButton}
             >
               {disableButton ? (
                 <ClipLoader
-                  color="#994ff3"
+                  color='#994ff3'
                   size={14}
-                  aria-label="Loading Spinner"
-                  data-testid="loader"
+                  aria-label='Loading Spinner'
+                  data-testid='loader'
                 />
               ) : (
                 'Skicka förfrågan'
