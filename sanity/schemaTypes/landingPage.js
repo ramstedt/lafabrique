@@ -2,6 +2,7 @@ export const landingPage = {
   name: 'landingPage',
   title: 'Förstasidan',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       name: 'title',

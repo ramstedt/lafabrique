@@ -25,4 +25,13 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
   ],
+  document: {
+    newDocumentOptions: (prev, { creationContext }) =>
+      creationContext.type === 'global'
+        ? prev.filter(
+            (template) =>
+              !['footer', 'landingPage', 'rent'].includes(template.templateId)
+          )
+        : prev,
+  },
 });

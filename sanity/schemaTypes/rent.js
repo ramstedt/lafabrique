@@ -2,6 +2,7 @@ export const rent = {
   name: 'rent',
   title: 'Hyra',
   type: 'document',
+  __experimental_actions: ['update', 'publish'],
   fields: [
     {
       name: 'title',
