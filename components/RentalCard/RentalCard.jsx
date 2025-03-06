@@ -10,7 +10,10 @@ const RentalCard = ({ rental }) => {
   return (
     <div className={styles.wrapper}>
       <h2>{rental.title}</h2>
-      <p>{rental.description}</p>
+      <p>
+        {rental.description} <br />
+        <span className={styles.price}>{rental.price}</span>
+      </p>
       <div className={styles.imageWrapper}>
         <Image src={urlFor(rental.image.asset)} alt={rental.image.alt} fill />
       </div>

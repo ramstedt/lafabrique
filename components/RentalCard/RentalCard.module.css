@@ -9,11 +9,12 @@
   max-width: 400px;
   margin-left: 0;
   flex-wrap: wrap;
-  height: 600px;
+  height: 630px;
 }
 
 .wrapper h2 {
   margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .imageWrapper {
@@ -25,6 +26,10 @@
 
 .imageWrapper img {
   object-fit: cover;
+}
+
+.price {
+  font-weight: 600;
 }
 
 @media screen and (min-width: 375px) {
