@@ -1,13 +1,20 @@
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+}
+
 .rentalsWrapper {
   position: relative;
   display: flex;
   flex-direction: column;
   z-index: 5;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 @media screen and (min-width: 768px) {
   .rentalsWrapper {
     flex-direction: row;
+    gap: 2rem;
   }
 }

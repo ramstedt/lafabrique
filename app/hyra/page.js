@@ -10,9 +10,9 @@ export default async function Hyra() {
 
   return (
     <>
-      <main>
+      <main className={styles.wrapper}>
         <div>
-          OBS DENNA SIDA ÄR INTE KLAR ÄN. :)
+          <h1>Hyr plats på La Fabrique</h1>
           <PortableText value={data.rent.description} />
         </div>
         <div className={styles.rentalsWrapper}>
