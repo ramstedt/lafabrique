@@ -161,7 +161,7 @@ export const artist = {
     },
     {
       name: 'galleryImage1',
-      title: 'Posrtfolio-bild 2',
+      title: 'Portfolio-bild 1',
       type: 'image',
       description:
         'Ladda upp en bild av ditt verk. Bilden bör vara horisontell. Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
