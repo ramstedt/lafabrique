@@ -79,6 +79,7 @@
 
 .menu.open {
   right: 0;
+  box-sizing: border-box;
 }
 
 .menu ul {
@@ -167,4 +168,5 @@
 .closeMenu {
   background: none;
   border: none;
+  margin-left: 225px;
 }

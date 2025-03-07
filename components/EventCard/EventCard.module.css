@@ -1,13 +1,10 @@
 .wrapper {
-  /* display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, auto);
+  row-gap: 1rem;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  align-items: end;
   max-width: 1440px;
   margin: auto;
   margin-bottom: 3rem;
