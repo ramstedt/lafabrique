@@ -13,7 +13,7 @@ const urlFor = (source) => builder.image(source).url();
 export const panorama = (source, crop) => {
   if (!source) return null;
 
-  let img = builder.image(source).auto('format').fit('crop');
+  let img = builder.image(source).auto('format').fit('crop').format('webp');
 
   if (crop) {
     const imageWidth = 1290;
@@ -70,7 +70,7 @@ export default function ArtistCard({ artist, direction }) {
                 src={panorama(artist.portrait.asset, artist.portrait.crop)}
                 alt={artist.portrait.alt || 'Artist portrait'}
                 fill
-                priority
+                loading="lazy"
                 sizes="(max-width: 425px) 100vw, 33vw"
               />
             )}
@@ -173,7 +173,8 @@ export default function ArtistCard({ artist, direction }) {
               }
               alt={artist.galleryImage1.alt}
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
             />
           </div>
           <div className={`${styles.secondImage} ${styles.imageWrapper}`}>
@@ -181,9 +182,10 @@ export default function ArtistCard({ artist, direction }) {
               src={
                 artist.galleryImage2 ? urlFor(artist.galleryImage2.asset) : ''
               }
-              alt={artist.galleryImage2}
+              alt={artist.galleryImage2.alt}
               fill
-              sizes="(max-width: 768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
             />
           </div>
         </div>
