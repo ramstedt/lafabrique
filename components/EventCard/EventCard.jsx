@@ -99,8 +99,9 @@ export default function EventCard() {
         <div>
           <strong>Pris:</strong> {event.price} kr
         </div>
+        <br />
         <div>
-          <button class={styles.button} onClick={scrollToForm}>
+          <button className={styles.button} onClick={scrollToForm}>
             Anmäl dig här
           </button>
         </div>

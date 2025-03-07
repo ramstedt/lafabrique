@@ -15,7 +15,7 @@ const RentalCard = ({ rental }) => {
         <span className={styles.price}>{rental.price}</span>
       </p>
       <div className={styles.imageWrapper}>
-        <Image src={urlFor(rental.image.asset)} alt={rental.image.alt} fill />
+        <Image src={urlFor(rental.image.asset)} alt={rental.alt} fill />
       </div>
     </div>
   );

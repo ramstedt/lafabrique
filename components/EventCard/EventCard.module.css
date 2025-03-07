@@ -53,8 +53,7 @@
   border-style: solid;
   border-image: url(/assets/border.svg) 30/19px round;
   width: 75%;
-  max-width: 300px;
-  position: relative;
+  background-color: #ececec62;
   z-index: 10;
 }
 
