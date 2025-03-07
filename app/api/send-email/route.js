@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req) {
   try {
-    const { firstName, surname, email, phone, message, course, sendTo } =
+    const { firstName, surname, email, phone, message, event, rental, sendTo } =
       await req.json();
 
     let recipientEmail;
@@ -27,7 +27,7 @@ export async function POST(req) {
     await transporter.sendMail({
       from: email,
       to: recipientEmail,
-      subject: `Intresseanmälan: ${course}`,
+      subject: `Intresseanmälan: ${event || ''} ${rental || ''}`.trim(),
       text: `
         Förnamn: ${firstName}
         Efternamn: ${surname}
