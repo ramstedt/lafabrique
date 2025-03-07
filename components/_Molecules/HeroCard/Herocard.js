@@ -42,7 +42,6 @@ export default function HeroCard({
           </div>
           <div>
             <SecondaryButton buttonText={buttonText} url={url} />
-            {console.log(url)}
           </div>
         </div>
       </div>
