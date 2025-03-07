@@ -20,7 +20,9 @@ export default async function Hyra() {
             return <RentalCard key={key} rental={rental} />;
           })}
         </div>
-        <Form rentals={data.rent.rentCards} />
+        <div className={styles.form}>
+          <Form rentals={data.rent.rentCards} />
+        </div>
       </main>
     </>
   );

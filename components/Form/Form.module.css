@@ -41,12 +41,11 @@
 }
 
 .button {
-  width: fit-content;
+  width: 100%;
   padding: 1rem;
   background: #55462b;
   color: white;
   text-align: center;
-  width: 10rem;
   font-family: inherit;
   border: 1px #302819;
   border-style: solid dotted solid dotted;
