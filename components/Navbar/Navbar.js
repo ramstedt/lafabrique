@@ -119,8 +119,8 @@ export default function Navbar() {
               </svg>
             </li>
             <li className={styles.menuItem}>
-              <Link href="/konstnarerna" onClick={toggleMenu}>
-                Konstnärerna
+              <Link href="/kreatorer" onClick={toggleMenu}>
+                Kreatörer
               </Link>
               <svg
                 viewBox="0 0 500 150"

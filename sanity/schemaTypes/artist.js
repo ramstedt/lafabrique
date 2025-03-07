@@ -1,6 +1,6 @@
 export const artist = {
   name: 'artist',
-  title: 'Konstnär',
+  title: 'Kreatör',
   type: 'document',
   fields: [
     {
