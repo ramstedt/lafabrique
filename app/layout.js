@@ -13,22 +13,23 @@ const manrope = Manrope({
 
 export const metadata = {
   title: 'La Fabrique',
-  description: 'lorem',
+  description:
+    'Skapa fritt, hyr arbetsyta eller delta i kurser och workshops, oavsett erfarenhetsnivå. Vi är ett konstnärligt kollektiv i Majorna - en inspirerande ateljé för måleri keramik, och mer. Välkommen till en kreativ gemenskap!',
 };
 
 export default async function RootLayout({ children }) {
   const { data } = await fetchFooter();
   return (
-    <html lang='sv'>
+    <html lang="sv">
       <body className={manrope.className}>
         <Navbar />
-        <div className='bgImageWrapper'>
+        <div className="bgImageWrapper">
           <Image
-            src='/assets/camomile11-min.svg'
+            src="/assets/camomile11-min.svg"
             width={500}
             height={500}
-            alt='Camomile flower sketch'
-            className='bgImage'
+            alt="Camomile flower sketch"
+            className="bgImage"
             priority
           />
         </div>
