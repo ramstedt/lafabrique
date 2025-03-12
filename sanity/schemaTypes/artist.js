@@ -139,6 +139,17 @@ export const artist = {
         Rule.email().error('Please enter a valid email address'),
     },
     {
+      name: 'website',
+      title: 'Hemsida',
+      type: 'string',
+      description: 'Lägg till en länk',
+      validation: (Rule) =>
+        Rule.uri({
+          scheme: ['https'],
+          allowRelative: false,
+        }),
+    },
+    {
       name: 'portrait',
       title: 'Porträtt',
       type: 'image',
