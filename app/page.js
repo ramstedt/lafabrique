@@ -52,22 +52,20 @@ export default async function Home() {
           där idéer får liv och händerna får arbeta. <br />
         </p>
         <div className={styles.infoCardsWrapper}>
-          {data.landingPage.infoCards.map((infoCard, key) => {
-            return (
-              <div key={key}>
-                <InfoCard
-                  title={infoCard.title}
-                  content={infoCard.description}
-                  image={infoCard.image ? urlFor(infoCard.image.asset) : ''}
-                  alt={infoCard.alt || 'Image'}
-                />
-              </div>
-            );
-          })}
+          {data.landingPage?.infoCards?.map((infoCard, key) => (
+            <div key={key}>
+              <InfoCard
+                title={infoCard.title}
+                content={infoCard.description}
+                image={infoCard.image ? urlFor(infoCard.image.asset) : ''}
+                alt={infoCard.alt || 'Image'}
+              />
+            </div>
+          ))}
         </div>
-        {data.landingPage.textBlocks.map((data, key) => {
-          return <ContentBlock key={key} data={data} />;
-        })}
+        {data.landingPage?.textBlocks?.map((block, key) => (
+          <ContentBlock key={key} data={block} />
+        ))}
       </main>
     </>
   );
