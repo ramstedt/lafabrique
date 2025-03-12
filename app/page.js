@@ -25,34 +25,30 @@ export default async function Home() {
         <p className={styles.intro}>
           Välkommen att bli en del av vårt konstnärliga kollektiv, <br />
           en ateljé i hjärtat av{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            Majorna
-          </span>
-          . Här möts konstnärer och{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            kreativa själar
-          </span>{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          Majorna
+          {/* </span> */}. Här möts konstnärer och{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          kreativa själar
+          {/* </span>{' '} */}
           för att utforska{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            måleri och keramik
-          </span>{' '}
-          i en{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            inspirerande miljö
-          </span>
-          . Vår ateljé är en plats där du kan skapa fritt,{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            hyra arbetsyta
-          </span>{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          måleri och keramik
+          {/* </span>{' '} */}i en{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          inspirerande miljö
+          {/* </span> */}. Vår ateljé är en plats där du kan skapa fritt,{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          hyra arbetsyta
+          {/* </span>{' '} */}
           eller delta i{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            kurser och workshops
-          </span>
-          , oavsett om du är nybörjare eller erfaren. Med en varm och
-          gemenskaplig atmosfär erbjuder vi en{' '}
-          <span className={`${dawning.className} ${styles.dawning}`}>
-            kreativ fristad
-          </span>{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          kurser och workshops
+          {/* </span> */}, oavsett om du är nybörjare eller erfaren. Med en varm
+          och gemenskaplig atmosfär erbjuder vi en{' '}
+          {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
+          kreativ fristad
+          {/* </span>{' '} */}
           där idéer får liv och händerna får arbeta. <br />
         </p>
         <div className={styles.infoCardsWrapper}>

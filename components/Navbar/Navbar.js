@@ -104,7 +104,7 @@ export default function Navbar() {
             </li>
             <li className={styles.menuItem}>
               <Link href="/hyra" onClick={toggleMenu}>
-                Hyra lokal
+                Hyra
               </Link>
               <svg
                 viewBox="0 0 500 150"
