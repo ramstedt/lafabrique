@@ -39,8 +39,7 @@ export default async function Home() {
           inspirerande miljö
           {/* </span> */}. Vår ateljé är en plats där du kan skapa fritt,{' '}
           {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
-          hyra arbetsyta
-          {/* </span>{' '} */}
+          hyra arbetsyta {/* </span> */}
           eller delta i{' '}
           {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
           kurser och workshops

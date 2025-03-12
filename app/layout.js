@@ -25,7 +25,7 @@ export default async function RootLayout({ children }) {
         <Navbar />
         <div className="bgImageWrapper">
           <Image
-            src="/assets/camomile11-min.svg"
+            src="/assets/camomile11.svg"
             width={500}
             height={500}
             alt="Camomile flower sketch"
