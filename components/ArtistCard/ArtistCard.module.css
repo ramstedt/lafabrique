@@ -3,6 +3,14 @@
   max-width: 390px;
 }
 
+.wrapper h2 {
+  color: #4b473e;
+  font-size: 2.4rem;
+  line-height: 2.4rem;
+  font-weight: normal;
+  margin: 0.5rem 0 1.2rem 0;
+}
+
 .socials {
   display: flex;
   gap: 1rem;
@@ -17,39 +25,18 @@
   text-align: center;
 }
 
-.nameWrapper {
+.imgWrapper {
   position: relative;
   height: 300px;
 }
 
-.nameWrapper img {
+.imgWrapper img {
   object-fit: cover;
 }
 
-.nameWrapper {
+.imgWrapper {
   height: 200px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  text-shadow:
-    -1px -1px 0 #50412668,
-    1px -1px 0 #50412668,
-    -1px 1px 0 #50412668,
-    1px 1px 0 #50412668;
   position: relative;
-}
-
-.nameright,
-.nameleft {
-  position: relative;
-  grid-area: 4 / 1 / 6 / 6;
-  z-index: 500;
-  color: #f4eddb;
-  font-size: 3.5rem;
-  line-height: 2rem;
-  margin: 0;
-  text-align: left !important;
-  font-weight: normal;
 }
 
 .surname {
@@ -120,7 +107,7 @@
     gap: 0;
   }
 
-  .nameWrapper,
+  .imgWrapper,
   .imageWrapper {
     height: 100%;
   }
@@ -128,17 +115,7 @@
   .socials {
     margin: 0;
   }
-  .nameWrapper {
+  .imgWrapper {
     justify-items: end;
-  }
-
-  .nameright,
-  .nameleft {
-    grid-area: 1 / 1 / 3 / 6;
-  }
-
-  .nameleft {
-    width: 100%;
-    text-align: left;
   }
 }

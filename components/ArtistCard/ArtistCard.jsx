@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import styles from './ArtistCard.module.css';
 import Image from 'next/image';
-import { Dawning_of_a_New_Day } from 'next/font/google';
+import { Syne_Mono } from 'next/font/google';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import { PortableText } from '@portabletext/react';
@@ -29,7 +29,7 @@ export const panorama = (source, crop) => {
 
   return img.url();
 };
-const dawning = Dawning_of_a_New_Day({
+const syneMono = Syne_Mono({
   subsets: ['latin'],
   weight: '400',
 });
@@ -59,12 +59,7 @@ export default function ArtistCard({ artist, direction }) {
         style={{ backgroundColor: artist.textBlock.backgroundColor }}
       >
         <div className={styles[`title${direction}`]}>
-          <div className={`${styles.nameWrapper} ${dawning.className}`}>
-            <h2 className={styles[`name${direction}`]}>
-              {artist.name}
-              <br />
-              <span className={styles.surname}>{artist.surname}</span>
-            </h2>
+          <div className={`${styles.imgWrapper}`}>
             {artist.portrait?.asset && (
               <Image
                 src={panorama(artist.portrait.asset, artist.portrait.crop)}
@@ -77,6 +72,9 @@ export default function ArtistCard({ artist, direction }) {
           </div>
         </div>
         <div className={styles[`text${direction}`]}>
+          <h2 className={syneMono.className}>
+            {artist.name} {artist.surname}
+          </h2>
           <div className={styles.socials}>
             {artist.facebook && (
               <div className={styles.facebook}>

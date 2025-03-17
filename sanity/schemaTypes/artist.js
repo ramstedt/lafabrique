@@ -16,6 +16,19 @@ export const artist = {
       validation: (Rule) => Rule.required().min(2).max(25),
     },
     {
+      name: 'isTutor',
+      title: 'Håller den här personen kurser?',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Ja', value: 'yes' },
+          { title: 'Nej', value: 'no' },
+        ],
+        layout: 'dropdown',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'textBlock',
       title: 'Text',
       type: 'object',

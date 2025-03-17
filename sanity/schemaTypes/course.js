@@ -101,6 +101,7 @@ export const course = {
           { title: 'Akvarell', value: 'Akvarell' },
           { title: 'Oljemåleri', value: 'Oljemåleri' },
           { title: 'Teckning', value: 'Teckning' },
+          { title: 'Textil', value: 'Textil' },
           { title: 'Workshop', value: 'Workshop' },
         ],
         layout: 'dropdown',
