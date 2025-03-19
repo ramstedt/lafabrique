@@ -95,6 +95,8 @@ export const course = {
       name: 'category',
       title: 'Kategori',
       type: 'string',
+      description:
+        'Workshops läggs till under kurskatalog samt på startsidan. Andra kategorier syns endast under kurskatalog',
       options: {
         list: [
           { title: 'Keramik', value: 'Keramik' },
@@ -141,18 +143,17 @@ export const course = {
       title: 'name',
       eventDateTime: 'eventDateTime',
       category: 'category',
-      image: 'image', // Fetch the course image
+      image: 'image',
     },
     prepare({ title, eventDateTime, category, image }) {
       if (!eventDateTime || eventDateTime.length === 0) {
         return {
           title: `${title} (${category || 'Ingen kategori'})`,
           subtitle: 'Ingen tid angiven',
-          media: image, // Use image as the icon
+          media: image,
         };
       }
 
-      // Sort eventDateTime array to get the earliest date
       const sortedDates = eventDateTime
         .map((date) => new Date(date))
         .sort((a, b) => a - b);

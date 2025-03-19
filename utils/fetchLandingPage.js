@@ -6,11 +6,11 @@ export const fetchLandingPage = async () => {
       "landingPage": *[_type == "landingPage"] | order(_createdAt asc)[0],
     }`;
 
-    const data = await client.fetch(query);
+    const landing = await client.fetch(query);
 
-    return { data };
+    return { landing };
   } catch (error) {
-    console.error('Error fetching data:', error);
-    return { data: null };
+    console.error('Error fetching landing:', error);
+    return { landing: null };
   }
 };

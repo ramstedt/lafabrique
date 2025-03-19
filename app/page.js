@@ -1,6 +1,7 @@
 import styles from './page.module.css';
 import Hero from '@/components/Hero/Hero';
 import { fetchLandingPage } from '@/utils/fetchLandingPage';
+import { fetchWorkshopsAndEvents } from '@/utils/fetchWorkshopsAndEvents';
 import { Dawning_of_a_New_Day } from 'next/font/google';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
@@ -16,11 +17,13 @@ const dawning = Dawning_of_a_New_Day({
 });
 
 export default async function Home() {
-  const { data } = await fetchLandingPage();
+  const { landing } = await fetchLandingPage();
+  const { events } = await fetchWorkshopsAndEvents();
 
   return (
     <>
-      <Hero gallery={data.landingPage.gallery} />
+      {console.log(events)}
+      <Hero gallery={landing.landingPage.gallery} />
       <main>
         <p className={styles.intro}>
           Välkommen att bli en del av vårt konstnärliga kollektiv, <br />
@@ -51,7 +54,7 @@ export default async function Home() {
           där idéer får liv och händerna får arbeta. <br />
         </p>
         <div className={styles.infoCardsWrapper}>
-          {data.landingPage?.infoCards?.map((infoCard, key) => (
+          {landing.landingPage?.infoCards?.map((infoCard, key) => (
             <div key={key}>
               <InfoCard
                 title={infoCard.title}
@@ -62,8 +65,8 @@ export default async function Home() {
             </div>
           ))}
         </div>
-        {data.landingPage?.textBlocks?.map((block, key) => (
-          <ContentBlock key={key} data={block} />
+        {landing.landingPage?.textBlocks?.map((block, key) => (
+          <ContentBlock key={key} landing={block} />
         ))}
       </main>
     </>

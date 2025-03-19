@@ -25,6 +25,10 @@ export const structure = (S) =>
         .child(S.documentTypeList('course').title('Kurser & Workshops'))
         .icon(PiChairLight),
       S.listItem()
+        .title('Events')
+        .child(S.documentTypeList('event').title('Events'))
+        .icon(PiChairLight),
+      S.listItem()
         .title('Hyra')
         .child(S.document().schemaType('rent').documentId('rent'))
         .icon(MdOutlineSell),
