@@ -75,6 +75,11 @@ export default function ArtistCard({ artist, direction }) {
           <h2 className={syneMono.className}>
             {artist.name} {artist.surname}
           </h2>
+          <small>
+            {artist && artist.isTutor === 'yes'
+              ? 'Kursledare'
+              : 'Ateljéhyrande konstnär'}
+          </small>
           <div className={styles.socials}>
             {artist.facebook && (
               <div className={styles.facebook}>

@@ -3,7 +3,7 @@ import { client } from '@/sanity/sanity';
 export const fetchArtists = async () => {
   try {
     const query = `{
-      "artists": *[_type == "artist"] | order(_createdAt asc) {
+      "artists": *[_type == "artist"] | order(isTutor desc, _createdAt asc) {
         ...,
         portrait {
           asset->{ _id, url },
