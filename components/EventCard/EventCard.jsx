@@ -4,7 +4,7 @@ import imageUrlBuilder from '@sanity/image-url';
 import { useState, useEffect, useRef } from 'react';
 import styles from './EventCard.module.css';
 import { useParams, useRouter } from 'next/navigation';
-import { fetchCourseBySlug } from '@/utils/fetchCourses';
+import { fetchCourseBySlug, fetchEventBySlug } from '@/utils/fetchCourses';
 import Form from '@/components/Form/Form';
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
@@ -26,17 +26,30 @@ export default function EventCard() {
 
     setIsLoading(true);
 
-    fetchCourseBySlug(slug).then(({ data, error }) => {
-      if (error) {
-        setError(error);
-        if (error === 'Eventet hittades inte') {
-          router.replace('/404');
+    (async () => {
+      try {
+        const { data: courseData, error: courseError } =
+          await fetchCourseBySlug(slug);
+        if (courseError) {
+          const { data: eventData, error: eventError } =
+            await fetchEventBySlug(slug);
+          if (eventError) {
+            setError(eventError);
+            if (eventError === 'Eventet hittades inte') {
+              router.replace('/404');
+            }
+          } else {
+            setEvent(eventData);
+          }
+        } else {
+          setEvent(courseData);
         }
-      } else {
-        setEvent(data);
+      } catch (err) {
+        setError(err.message || String(err));
+      } finally {
+        setIsLoading(false);
       }
-      setIsLoading(false);
-    });
+    })();
   }, [slug, router]);
 
   const scrollToForm = () => {
@@ -49,6 +62,18 @@ export default function EventCard() {
   if (error) return <p className={styles.error}>{error}</p>;
   if (!event) return null;
 
+  const dateTimes = event.eventDateTime
+    ? Array.isArray(event.eventDateTime)
+      ? event.eventDateTime
+      : [event.eventDateTime]
+    : event.date
+      ? Array.isArray(event.date)
+        ? event.date
+        : [event.date]
+      : [];
+
+  console.log(event);
+
   return (
     <div className={`${styles.wrapper} margin`}>
       <div className={styles.imageWrapper}>
@@ -60,7 +85,9 @@ export default function EventCard() {
         />
       </div>
       <div className={styles.header}>
-        <h1>{event.name}</h1>
+        <h1>
+          {event.name} {event.title}
+        </h1>
         <h4>{event.category}</h4>
       </div>
       <div className={styles.overview}>
@@ -69,10 +96,8 @@ export default function EventCard() {
         </div>
 
         <ul>
-          <strong>
-            {event.eventDateTime.length >= 2 ? 'Kurstillfällen' : 'Tid'}:
-          </strong>
-          {event.eventDateTime.map((dateTime, key) => (
+          <strong>{dateTimes.length >= 2 ? 'Tillfällen' : 'Tid'}:</strong>
+          {dateTimes.map((dateTime, key) => (
             <li key={key} className={styles.time}>
               {formatDateWithTime(dateTime)}
             </li>
@@ -85,15 +110,14 @@ export default function EventCard() {
               </>
             ) : (
               <>
-                (Varje kurstillfälle är {event.hour}{' '}
+                (Varje tillfälle är {event.hour}{' '}
                 {event.hour > 2 ? 'timmar' : 'timme'})
               </>
             )}
           </small>
         </ul>
-
         <div>
-          <strong>Hålls av:</strong> {event.instructor}
+          <strong>Hålls av:</strong> {event.instructor} {event.organiser}
         </div>
 
         <div>

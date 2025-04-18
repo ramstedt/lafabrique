@@ -4,7 +4,8 @@ import { artist } from './artist';
 import { course } from './course';
 import { rent } from './rent';
 import { event } from './event';
+import { meetings } from './meetings';
 
 export const schema = {
-  types: [landingPage, footer, artist, course, rent, event],
+  types: [landingPage, footer, artist, course, rent, event, meetings],
 };

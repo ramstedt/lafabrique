@@ -27,16 +27,14 @@ export default function Form({ event, rentals }) {
       phone,
       message,
       rental,
-      event: event?.name,
+      event: event?.name + event?.title,
       sendTo: event?.sendTo || 'karin',
     };
 
     try {
       const response = await fetch('/api/send-email', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestData),
       });
 
@@ -62,10 +60,7 @@ export default function Form({ event, rentals }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   return (
@@ -125,7 +120,11 @@ export default function Form({ event, rentals }) {
               required
             />
           </div>
-          {event && <div>Ang. {event.name}</div>}
+          {event && (
+            <div>
+              Ang. {event.name} {event.title}
+            </div>
+          )}
           {rentals && (
             <div className={styles.formBlock}>
               <label htmlFor='rental'>Jag är intresserad av</label>

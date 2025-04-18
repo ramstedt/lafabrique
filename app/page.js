@@ -7,14 +7,13 @@ import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import InfoCard from '@/components/InfoCard/InfoCard';
 import ContentBlock from '@/components/ContentBlock/ContentBlock';
+import EventPoster from '@/components/EventPoster/EventPoster';
+import Link from 'next/link';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
 
-const dawning = Dawning_of_a_New_Day({
-  subsets: ['latin'],
-  weight: '400',
-});
+const dawning = Dawning_of_a_New_Day({ subsets: ['latin'], weight: '400' });
 
 export default async function Home() {
   const { landing } = await fetchLandingPage();
@@ -22,7 +21,6 @@ export default async function Home() {
 
   return (
     <>
-      {console.log(events)}
       <Hero gallery={landing.landingPage.gallery} />
       <main>
         <p className={styles.intro}>
@@ -63,6 +61,28 @@ export default async function Home() {
                 alt={infoCard.alt || 'Image'}
               />
             </div>
+          ))}
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            gap: '1rem',
+            marginBottom: '1rem',
+          }}
+        >
+          <div style={{ margin: 'auto', textAlign: 'center' }}>
+            <h2>Events och Workshops</h2>
+            <small>
+              För kurser vänligen kika i{' '}
+              <Link href='katalog' style={{ textDecoration: 'underline' }}>
+                kurskatalogen
+              </Link>
+            </small>
+          </div>
+          {events?.map((event, key) => (
+            <EventPoster event={event} key={key} />
           ))}
         </div>
         {landing.landingPage?.textBlocks?.map((block, key) => (

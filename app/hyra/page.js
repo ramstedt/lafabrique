@@ -1,5 +1,4 @@
 import { fetchRentals } from '@/utils/fetchRentals';
-import { client } from '@/sanity/sanity';
 import { PortableText } from '@portabletext/react';
 import RentalCard from '@/components/RentalCard/RentalCard';
 import styles from './hyra.module.css';

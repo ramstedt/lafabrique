@@ -2,7 +2,7 @@ import { PiHouseLineFill } from 'react-icons/pi';
 import { RiLayoutBottom2Fill } from 'react-icons/ri';
 import { MdPalette } from 'react-icons/md';
 import { MdOutlineSell } from 'react-icons/md';
-import { PiChairLight } from 'react-icons/pi';
+import { PiChairLight, PiChampagneBold } from 'react-icons/pi';
 
 export const structure = (S) =>
   S.list()
@@ -17,7 +17,7 @@ export const structure = (S) =>
         )
         .icon(PiHouseLineFill),
       S.listItem()
-        .title('Artists')
+        .title('Kreatörer')
         .child(S.documentTypeList('artist').title('Artists'))
         .icon(MdPalette),
       S.listItem()
@@ -27,10 +27,14 @@ export const structure = (S) =>
       S.listItem()
         .title('Events')
         .child(S.documentTypeList('event').title('Events'))
-        .icon(PiChairLight),
+        .icon(PiChampagneBold),
       S.listItem()
-        .title('Hyra')
+        .title('Hyra för skapande')
         .child(S.document().schemaType('rent').documentId('rent'))
+        .icon(MdOutlineSell),
+      S.listItem()
+        .title('Hyra för event')
+        .child(S.document().schemaType('meetings').documentId('meetings'))
         .icon(MdOutlineSell),
       S.listItem()
         .title('Footer')

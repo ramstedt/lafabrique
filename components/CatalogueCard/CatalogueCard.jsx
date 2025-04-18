@@ -37,40 +37,40 @@ const CatalogueCard = ({ event }) => {
         <div className={styles.icon}>
           {event.category === 'Akvarell' && (
             <Image
-              src="/assets/watercolour-brushes.png"
+              src='/assets/watercolour-brushes.png'
               width={90}
               height={90}
-              alt="akvarellpalette med rosor och penslar"
+              alt='akvarellpalette med rosor och penslar'
               className={styles.iconImage}
               priority
             />
           )}
           {event.category === 'Oljemåleri' && (
             <Image
-              src="/assets/palette.png"
+              src='/assets/palette.png'
               width={90}
               height={90}
-              alt="akvarellpalette med rosor och penslar"
+              alt='akvarellpalette med rosor och penslar'
               className={styles.iconImage}
               priority
             />
           )}
           {event.category == 'Keramik' && (
             <Image
-              src="/assets/vup-eyes.svg"
+              src='/assets/vup-eyes.svg'
               width={90}
               height={90}
-              alt="akvarellpalette med rosor och penslar"
+              alt='akvarellpalette med rosor och penslar'
               className={styles.iconImage}
               priority
             />
           )}
           {event.category == 'Workshop' && (
             <Image
-              src="/assets/bust.png"
+              src='/assets/bust.png'
               width={80}
               height={80}
-              alt="akvarellpalette med rosor och penslar"
+              alt='akvarellpalette med rosor och penslar'
               className={styles.iconImage}
               priority
             />
@@ -78,8 +78,6 @@ const CatalogueCard = ({ event }) => {
         </div>
         <h3 className={styles.title}>{event.name}</h3>
         <div className={styles.dates}>
-          Kursstart
-          <br />
           <span>{formatDateWithTime(event.eventDateTime)}</span>
         </div>
       </div>
