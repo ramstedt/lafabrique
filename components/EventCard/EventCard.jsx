@@ -72,8 +72,6 @@ export default function EventCard() {
         : [event.date]
       : [];
 
-  console.log(event);
-
   return (
     <div className={`${styles.wrapper} margin`}>
       <div className={styles.imageWrapper}>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { fetchMeetings } from '@/utils/fetchMeetings';
 import { PortableText } from '@portabletext/react';
 import RentalEventCard from '@/components/RentalEventCard/RentalEventCard';

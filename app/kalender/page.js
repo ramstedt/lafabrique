@@ -1,3 +1,4 @@
+import React from 'react';
 import { fetchCourses } from '@/utils/fetchCourses';
 import Calendar from '@/components/Calendar/Calendar';
 

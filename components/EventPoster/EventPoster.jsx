@@ -35,7 +35,6 @@ export default function EventPoster({ description, event }) {
             {event.name}
             {event.title}
           </h2>
-          {console.log(event)}
           <p className={styles.artist}>
             Arrangör: {event.instructor}
             {event.organiser}

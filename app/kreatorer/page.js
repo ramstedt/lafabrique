@@ -1,3 +1,4 @@
+import React from 'react';
 import { fetchArtists } from '@/utils/fetchArtists';
 import ArtistCard from '@/components/ArtistCard/ArtistCard';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { fetchCourses } from '@/utils/fetchCourses';
 import FilterableCatalogue from '@/components/FilterableCatalogue/FilterableCatalogue';
 

@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+export const runtime = 'nodejs';
 
 export async function POST(req) {
   try {
@@ -18,10 +19,7 @@ export async function POST(req) {
 
     let transporter = nodemailer.createTransport({
       service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
+      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
     });
 
     await transporter.sendMail({
