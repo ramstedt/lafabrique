@@ -1,3 +1,4 @@
+/* eslint-env node */
 import nodemailer from 'nodemailer';
 export const runtime = 'nodejs';
 

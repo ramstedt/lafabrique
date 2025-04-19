@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './EventPoster.module.css';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
-import { formatDateWithTime, formatDateOnly } from '@/utils/formatDates';
+import { formatDateWithTime } from '@/utils/formatDates';
 import Link from 'next/link';
 
 const builder = imageUrlBuilder(client);

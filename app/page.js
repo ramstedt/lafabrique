@@ -13,7 +13,7 @@ import Link from 'next/link';
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
 
-const dawning = Dawning_of_a_New_Day({ subsets: ['latin'], weight: '400' });
+// const dawning = Dawning_of_a_New_Day({ subsets: ['latin'], weight: '400' });
 
 export default async function Home() {
   const { landing } = await fetchLandingPage();

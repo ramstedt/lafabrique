@@ -44,7 +44,7 @@ export default function Form({ event, rentals }) {
       } else {
         setStatus('Något gick fel, försök igen senare.');
       }
-    } catch (error) {
+    } catch {
       setStatus('Fel vid skickande av formulär.');
     } finally {
       setFormData({
