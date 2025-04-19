@@ -3,7 +3,7 @@ import styles from './CatalogueCard.module.css';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import Link from 'next/link';
-import { formatDateWithTime, formatDateOnly } from '@/utils/formatDates';
+import { formatDateWithTime } from '@/utils/formatDates';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();

@@ -9,4 +9,8 @@ export default [
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
   { rules: { 'react/prop-types': 'off', 'react/react-in-jsx-scope': 'off' } },
+  {
+    files: ['app/api/**/*.[jt]s?(x)'],
+    languageOptions: { env: { node: true } },
+  },
 ];
