@@ -37,7 +37,7 @@ export default function HeroCard({
           <div className={`${styles.title} ${autorOne.className}`}>
             {textTwo}
           </div>
-          {url > 2 && (
+          {url.length > 2 && (
             <div>
               <SecondaryButton buttonText={buttonText} url={url} />
             </div>
