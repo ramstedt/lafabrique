@@ -4,10 +4,7 @@ import styles from './Herocard.module.css';
 import SecondaryButton from '@/components/_Atoms/SecondaryButton/SecondaryButton';
 import { Autour_One } from 'next/font/google';
 
-const autorOne = Autour_One({
-  subsets: ['latin'],
-  weight: '400',
-});
+const autorOne = Autour_One({ subsets: ['latin'], weight: '400' });
 
 export default function HeroCard({
   buttonText,
@@ -29,7 +26,7 @@ export default function HeroCard({
           src={mediaUrl}
           fill
           priority={true}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
         />
       )}
       <div className={styles.contentWrapper}>
@@ -40,9 +37,11 @@ export default function HeroCard({
           <div className={`${styles.title} ${autorOne.className}`}>
             {textTwo}
           </div>
-          <div>
-            <SecondaryButton buttonText={buttonText} url={url} />
-          </div>
+          {url > 2 && (
+            <div>
+              <SecondaryButton buttonText={buttonText} url={url} />
+            </div>
+          )}
         </div>
       </div>
     </div>

@@ -74,7 +74,7 @@ export default async function Home() {
             <h2>Events och Workshops</h2>
             <small>
               För kurser vänligen kika i{' '}
-              <Link href='katalog' style={{ textDecoration: 'underline' }}>
+              <Link href='/katalog' style={{ textDecoration: 'underline' }}>
                 kurskatalogen
               </Link>
             </small>
