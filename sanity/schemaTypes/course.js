@@ -13,10 +13,7 @@ export const course = {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'name',
-        maxLength: 96,
-      },
+      options: { source: 'name', maxLength: 96 },
       validation: (Rule) =>
         Rule.required().custom(async (slug, context) => {
           if (!slug || !slug.current) {
@@ -40,9 +37,7 @@ export const course = {
       description:
         'Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
       validation: (Rule) => Rule.required(),
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
       fields: [
         {
           name: 'alt',
@@ -86,17 +81,11 @@ export const course = {
       type: 'number',
       description: 'Endast siffror',
     },
-    {
-      name: 'instructor',
-      title: 'Instruktör',
-      type: 'string',
-    },
+    { name: 'instructor', title: 'Instruktör', type: 'string' },
     {
       name: 'category',
       title: 'Kategori',
       type: 'string',
-      description:
-        'Workshops läggs till under kurskatalog samt på startsidan. Andra kategorier syns endast under kurskatalog',
       options: {
         list: [
           { title: 'Keramik', value: 'Keramik' },
@@ -137,7 +126,15 @@ export const course = {
         },
       ],
     },
+    // {
+    //   name: 'showOnLanding',
+    //   title: 'Visa denna kursen på startsidan?',
+    //   type: 'boolean',
+    //   description:
+    //     'Om detta är aktiverat kommer kursen att synas på startsidan. Den tas automatiskt bort om datumet har passerat.',
+    // },
   ],
+
   preview: {
     select: {
       title: 'name',

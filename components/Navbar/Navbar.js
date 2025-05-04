@@ -42,22 +42,22 @@ export default function Navbar() {
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setHidden(true);
-      } else {
-        setHidden(false);
-      }
-      lastScrollY = window.scrollY;
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > lastScrollY) {
+  //       setHidden(true);
+  //     } else {
+  //       setHidden(false);
+  //     }
+  //     lastScrollY = window.scrollY;
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>

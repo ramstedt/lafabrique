@@ -1,10 +1,10 @@
 import React from 'react';
-import EventCard from '@/components/EventCard/EventCard';
+import CourseCard from '@/components/CourseCard/CourseCard';
 
-export default function EventPage() {
+export default function CoursePage() {
   return (
     <main>
-      <EventCard />
+      <CourseCard />
     </main>
   );
 }

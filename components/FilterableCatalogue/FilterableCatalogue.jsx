@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import EventFilter from '@/components/EventFilter/EventFilter';
+import EventFilter from '@/components/CourseFilter/CourseFilter';
 import CatalogueCard from '@/components/CatalogueCard/CatalogueCard';
 import { groupByMonth } from '@/utils/groupByMonth';
 import styles from './FilterableCatalogue.module.css';

@@ -3,17 +3,14 @@ import styles from './EventPoster.module.css';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
 import { formatDateWithTime } from '@/utils/formatDates';
-import Link from 'next/link';
+import { PortableText } from 'next-sanity';
 
 const builder = imageUrlBuilder(client);
 const urlFor = (source) => builder.image(source).url();
 
-export default function EventPoster({ description, event }) {
+export default function EventPoster({ event }) {
   return (
-    <Link
-      href={`${event._type === 'event' ? 'event' : 'katalog'}/${event.slug.current}`}
-      className={styles.poster}
-    >
+    <div className={styles.poster}>
       <Image
         src='/assets/white-paper-texture-background.jpg'
         alt='Background'
@@ -35,15 +32,16 @@ export default function EventPoster({ description, event }) {
             {event.name}
             {event.title}
           </h2>
+          <span>{formatDateWithTime(event.eventDateTime)}</span>
           <p className={styles.artist}>
             Arrangör: {event.instructor}
             {event.organiser}
           </p>
-          <p className={styles.description}>
-            {description} <span>{formatDateWithTime(event.eventDateTime)}</span>
-          </p>
+          <div className={styles.description}>
+            <PortableText value={event.description} />
+          </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

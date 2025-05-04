@@ -13,10 +13,7 @@ export const event = {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
+      options: { source: 'title', maxLength: 96 },
       validation: (Rule) =>
         Rule.required().custom(async (slug, context) => {
           if (!slug || !slug.current) {
@@ -40,9 +37,7 @@ export const event = {
       description:
         'Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
       validation: (Rule) => Rule.required(),
-      options: {
-        hotspot: true,
-      },
+      options: { hotspot: true },
       fields: [
         {
           name: 'alt',
@@ -78,11 +73,7 @@ export const event = {
       type: 'number',
       description: 'Endast siffror. Kan lämnas tomt',
     },
-    {
-      name: 'organiser',
-      title: 'Arrangör',
-      type: 'string',
-    },
+    { name: 'organiser', title: 'Arrangör', type: 'string' },
     {
       name: 'sendTo',
       title: 'Anmälan skickas till:',
@@ -104,17 +95,18 @@ export const event = {
         },
       ],
     },
+    // {
+    //   name: 'showOnLanding',
+    //   title: 'Visa eventet på startsidan?',
+    //   type: 'boolean',
+    //   description:
+    //     'Om detta är aktiverat kommer eventet att synas på startsidan. Den tas automatiskt bort om datumet har passerat.',
+    // },
   ],
   preview: {
-    select: {
-      title: 'title',
-      image: 'image',
-    },
+    select: { title: 'title', image: 'image' },
     prepare({ title, image }) {
-      return {
-        title: `${title}`,
-        media: image,
-      };
+      return { title: `${title}`, media: image };
     },
   },
 };

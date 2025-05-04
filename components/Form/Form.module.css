@@ -12,10 +12,6 @@
   }
 }
 
-.summary {
-  width: 80%;
-}
-
 .content {
   display: flex;
   flex-direction: column;

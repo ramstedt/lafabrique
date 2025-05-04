@@ -1,7 +1,7 @@
 import styles from './page.module.css';
 import Hero from '@/components/Hero/Hero';
 import { fetchLandingPage } from '@/utils/fetchLandingPage';
-import { fetchWorkshopsAndEvents } from '@/utils/fetchWorkshopsAndEvents';
+import { fetchEvents } from '@/utils/fetchEvents';
 import { Dawning_of_a_New_Day } from 'next/font/google';
 import imageUrlBuilder from '@sanity/image-url';
 import { client } from '@/sanity/sanity';
@@ -15,7 +15,7 @@ const urlFor = (source) => builder.image(source).url();
 
 export default async function Home() {
   const { landing } = await fetchLandingPage();
-  const { events } = await fetchWorkshopsAndEvents();
+  const { events } = await fetchEvents();
 
   return (
     <>
@@ -41,12 +41,10 @@ export default async function Home() {
           hyra arbetsyta {/* </span> */}
           eller delta i{' '}
           {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
-          kurser och workshops
-          {/* </span> */}, oavsett om du är nybörjare eller erfaren. Med en varm
-          och gemenskaplig atmosfär erbjuder vi en{' '}
+          kurser och workshops, {/* </span> */} oavsett om du är nybörjare eller
+          erfaren. Med en varm och gemenskaplig atmosfär erbjuder vi en{' '}
           {/* <span className={`${dawning.className} ${styles.dawning}`}> */}
-          kreativ fristad
-          {/* </span>{' '} */}
+          kreativ fristad {/* </span>{' '} */}
           där idéer får liv och händerna får arbeta. <br />
         </p>
         <div className={styles.infoCardsWrapper}>
@@ -71,16 +69,20 @@ export default async function Home() {
           }}
         >
           <div style={{ margin: 'auto', textAlign: 'center' }}>
-            <h2>Events och Workshops</h2>
+            <h2>Events</h2>
             <small>
-              För kurser vänligen kika i{' '}
+              Här listas kommande events hos oss. Om du är ute efter kurser och
+              workshops, vänligen kika i vår{' '}
               <Link href='/katalog' style={{ textDecoration: 'underline' }}>
-                kurskatalogen
+                kurskatalog
               </Link>
+              !
             </small>
           </div>
           {events?.map((event, key) => (
-            <EventPoster event={event} key={key} />
+            <Link href={`/event/${event.slug.current}`}>
+              <EventPoster event={event} key={key} />
+            </Link>
           ))}
         </div>
         {landing.landingPage?.textBlocks?.map((block, key) => (

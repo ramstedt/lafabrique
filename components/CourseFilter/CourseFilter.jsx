@@ -1,6 +1,6 @@
-import styles from './EventFilter.module.css';
+import styles from './CourseFilter.module.css';
 
-const EventFilter = ({ selectedCategory, setSelectedCategory, events }) => {
+const CourseFilter = ({ selectedCategory, setSelectedCategory, events }) => {
   const categories = [
     'Alla',
     ...new Set(events.map((event) => event.category)),
@@ -26,4 +26,4 @@ const EventFilter = ({ selectedCategory, setSelectedCategory, events }) => {
   );
 };
 
-export default EventFilter;
+export default CourseFilter;

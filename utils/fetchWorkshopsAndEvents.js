@@ -2,13 +2,13 @@ import { client } from '@/sanity/sanity';
 export const fetchWorkshopsAndEvents = async () => {
   try {
     const now = new Date();
-    now.setHours(0, 0, 0, 0); // Normalize to start of the day
+    now.setHours(0, 0, 0, 0);
 
-    const workshopQuery = `*[_type == "course" && category == "Workshop"]{
+    const workshopQuery = `*[_type == "course" && showOnLanding == true]{
           ...
       }`;
 
-    const eventQuery = `*[_type == "event"]{
+    const eventQuery = `*[_type == "event" && showOnLanding == true]{
           ...
       }`;
 
