@@ -14,23 +14,20 @@ export const landingPage = {
       name: 'gallery',
       title: 'Hero karusell',
       type: 'array',
-      options: {
-        layout: 'grid',
-      },
+      options: { layout: 'grid' },
       of: [
         {
           type: 'object',
           name: 'galleryObject',
           fields: [
             {
+              validation: (Rule) => Rule.required(),
               name: 'image',
               type: 'image',
               title: 'Bild',
               description:
                 'Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
-              options: {
-                hotspot: true,
-              },
+              options: { hotspot: true },
             },
             {
               name: 'alt',
@@ -40,26 +37,15 @@ export const landingPage = {
                 'Enligt WCAG2 måste bilder ha en text som beskriver bilden för de som inte kan se. https://bernskioldmedia.com/sv/sa-skriver-du-bra-alt-texter-till-bilder-for-battre-seo-och-tillganglighet',
               validation: (Rule) => Rule.required(),
             },
-            {
-              name: 'smallText',
-              title: 'Text 1',
-              type: 'string',
-            },
+            { name: 'smallText', title: 'Text 1', type: 'string' },
             {
               name: 'largeText',
               title: 'Text 2',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             },
-            {
-              name: 'buttonText',
-              title: 'Text knapp',
-              type: 'string',
-            },
-            {
-              name: 'url',
-              title: 'Länk knapp',
-              type: 'string',
-            },
+            { name: 'buttonText', title: 'Text knapp', type: 'string' },
+            { name: 'url', title: 'Länk knapp', type: 'string' },
           ],
         },
       ],
@@ -93,9 +79,7 @@ export const landingPage = {
               type: 'image',
               description:
                 'Försök hålla filen så liten som möjligt för snabbare laddning. Bra sida för optimering av bilder: https://squoosh.app',
-              options: {
-                hotspot: true,
-              },
+              options: { hotspot: true },
             },
             {
               name: 'alt',
@@ -178,10 +162,7 @@ export const landingPage = {
             },
           ],
           preview: {
-            select: {
-              title: 'text',
-              subtitle: 'backgroundColor',
-            },
+            select: { title: 'text', subtitle: 'backgroundColor' },
             prepare({ title, subtitle }) {
               return {
                 title: title?.[0]?.children?.[0]?.text || 'No text',
