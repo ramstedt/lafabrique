@@ -8,7 +8,7 @@ export default async function Catalogue() {
   if (!events || events.length === 0) {
     return (
       <main>
-        <p>Det finns inga planerade kurser för tillfället.</p>
+        <p>Det finns inga planerade kurser eller workshops för tillfället.</p>
       </main>
     );
   }

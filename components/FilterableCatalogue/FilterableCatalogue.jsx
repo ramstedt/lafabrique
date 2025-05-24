@@ -35,12 +35,12 @@ export default function FilterableCatalogue({ events }) {
         setSelectedCategory={setSelectedCategory}
         events={events}
       />
-      {Object.keys(groupedByMonth).length > 0 ? (
-        Object.keys(groupedByMonth).map((month) => (
+      {groupedByMonth.size > 0 ? (
+        Array.from(groupedByMonth).map(([month, events]) => (
           <div key={month}>
             <h2>{month.charAt(0).toUpperCase() + month.slice(1)}</h2>
             <div className={styles.cardsWrapper}>
-              {groupedByMonth[month].map((event) => (
+              {events.map((event) => (
                 <CatalogueCard
                   key={event._id + event.eventDateTime.toISOString()}
                   event={event}
@@ -51,7 +51,8 @@ export default function FilterableCatalogue({ events }) {
         ))
       ) : (
         <p>
-          Det finns inga planerade kurser eller i denna kategori för tillfället.
+          Det finns inga planerade kurser eller workshops i denna kategori för
+          tillfället.
         </p>
       )}
     </main>
